@@ -1,2 +1,18 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import { Span } from '@/lib/atoms'
+	import { Content, Stack, Inline, Text, Break, Grid } from '@/lib/bonds'
+</script>
+
+<Content
+	css={{
+		bg: '$orange700',
+	}}
+>
+	<Stack
+		css={{
+			bg: '$orange600',
+		}}
+	>
+		<Text>Body</Text>
+	</Stack>
+</Content>
