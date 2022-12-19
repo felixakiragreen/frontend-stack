@@ -12,3 +12,7 @@ We're using only the best:
 
 - [lodash-es](https://lodash.com/docs) (wrangling)
 - [date-fns](https://date-fns.org/docs/) (datetime)
+
+### TODO:
+
+- responsive images
