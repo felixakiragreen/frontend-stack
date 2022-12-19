@@ -14,10 +14,8 @@ const config = {
 
 	kit: {
 		adapter: netlify(),
-		resolve: {
-			alias: {
-				'@': '/src',
-			},
+		alias: {
+			'@': '/src',
 		},
 	},
 }
