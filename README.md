@@ -16,3 +16,6 @@ We're using only the best:
 ### TODO:
 
 - responsive images
+   [ ] vite-imagetools?
+- update to OKLCH
+   [ ] oklch.com
