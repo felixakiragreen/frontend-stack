@@ -2,8 +2,7 @@
 	import '@/lib/style/global.css'
 	import { stitch, getCssText } from '@/ui'
 
-	import Header from './header.svelte'
-	import Footer from './footer.svelte'
+	import { Header, Footer } from '@/lib/cells'
 
 	const ss = stitch({
 		display: 'grid',
@@ -16,7 +15,7 @@
 </script>
 
 <svelte:head>
-	<title>golOS</title>
+	<title>title</title>
 </svelte:head>
 
 <!-- https://discord.com/channels/752614004387610674/752795957674115092/925177257025220658 -->
