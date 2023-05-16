@@ -1,0 +1,11 @@
+FrontEndStackTodo:
+   [ ] responsive images
+      vite-imagetools?
+   [ ] update to OKLCH
+      oklch.com
+   [ ] rename Stack & Inline to HStack & VStack
+   [ ] fix TypeScript types
+      export let align: string | null = null
+	   export let alignV: string | null = null
+      
+   [ ] pull over new & improved components from the-worm
