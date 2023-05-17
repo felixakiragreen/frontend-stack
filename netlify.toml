@@ -1,4 +1,6 @@
 [build]
-  command = "npm run build"
-  functions = "functions/"
-  publish = "build/"
+  command = "pnpm build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "18"
