@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { stitch } from '@/ui'
-	import type { CSS } from '@/ui'
+	import type { PropCss, PropString, PropComponent } from '@/types'
 
-	export let id = null
-	export let cls = null
-	export let css: CSS = null
-	export let style = null
+	export let id: PropString = undefined
+	export let cls: PropComponent = undefined
+	export let css: PropCss = undefined
+	export let style: PropString = undefined
 	export let vrt = {}
 
-	export let url
-	export let fileName = undefined
+	export let url: string
+	export let fileName: PropString
 	let download = fileName
 	export let newTab = false
 	let target = newTab ? '_blank' : '_self'
@@ -18,12 +18,12 @@
 </script>
 
 <a
+	{id}
 	href={url}
 	{download}
 	{target}
 	class={ss({ ...vrt, css })}
 	{style}
-	{id}
 	on:click
 >
 	<slot />
