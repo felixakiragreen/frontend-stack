@@ -1,84 +1,34 @@
 <script lang="ts">
+	import type { ComponentProps } from 'svelte'
 	import { stitch } from '@/ui'
-	import type { CSS } from '@/ui'
+	import type { PropCss, VariantOption } from '@/types'
+	import { Input, Textarea } from '@/atoms'
 
-	import { Input, Textarea } from '@/lib/atoms'
-
-	export let css: CSS = null
-	export let look = 'holo'
-	export let size = 'md'
-	export let rounding = 'no'
-	export let stateful = null
+	export let css: PropCss = undefined
+	export let look: VariantOption<typeof ss, 'look'> | undefined = 'holo'
+	export let size: VariantOption<typeof ss, 'size'> | undefined = 'md'
+	export let rounding: VariantOption<typeof ss, 'rounding'> | undefined =
+		'partial'
+	export let lines: number | undefined = undefined
 
 	export let value = ''
 	export let placeholder = ''
-
-	export let multiline = false
-	export let lines: number = null
-	type InputTypes = `password` | `email` | `text` | `number` | `date` | `time`
-
-	export let inputType: InputTypes = 'text'
+	export let inputType: ComponentProps<Input>['inputType'] = undefined
 
 	const ss = stitch({
-		// cursor: 'pointer',
 		transition: '$1',
-
-		// maybe
-		width: '$full',
-
-		// Back (background)
-		// Edge (border)
-		// Text (foreground)
-		// Ring (focus)
-
-		// BackHover
-		// EdgeHover
-		// TextHover
-		// RingHover
-
-		// BackFocus
-		// EdgeFocus
-		// TextFocus
-		// RingFocus
-
-		$$Back: '$colors$clear',
-		$$Edge: '$colors$muted',
-		$$Text: '$colors$foreground',
-		$$Ring: '$colors$primaryFocus',
-
-		$$BackHover: '$colors$faded',
-		$$EdgeHover: '$colors$highlight',
-		$$TextHover: '$colors$foreground',
-		$$RingHover: '$colors$primaryFocus',
-
-		// $$BackFocus
-		$$EdgeFocus: '$colors$lowlight',
-		// $$TextFocus
-		// $$RingFocus
-
-		'&:active': {},
-		'&:focus': {
-			outline: 'none',
-			boxShadow: [
-				//
-				'0 0 0px 3px $colors$background',
-				'0 0 0px 6px $$Ring',
-			].join(', '),
-		},
-
 		variants: {
 			look: {
 				holo: {
-					bg: '$$Back',
-					color: '$$Text',
-					border: '1px solid $$Edge',
+					bg: '$clear',
+					color: '$foreground',
+					border: '1px solid $muted',
 					fontFamily: '$mono',
 					'&:hover': {
-						border: '1px solid $$EdgeHover',
-						bg: '$$BackHover',
+						border: '1px solid $worm',
 					},
 					'&:focus': {
-						border: '1px solid $$EdgeFocus',
+						border: '1px solid $indigo',
 						outline: 'none',
 					},
 				},
@@ -101,43 +51,24 @@
 				},
 			},
 			rounding: {
-				no: {
+				none: {
 					borderRadius: '$none',
 				},
-				md: {
+				partial: {
 					borderRadius: '$base',
 				},
 				full: {
 					borderRadius: '$full',
 				},
 			},
-			//
-			stateful: {
-				valid: {
-					$$Back: '$colors$green900',
-					$$Edge: '$colors$green600',
-					$$BackHover: '$colors$green800',
-					$$EdgeHover: '$colors$green300',
-					$$BackFocus: '$colors$green800',
-					$$EdgeFocus: '$colors$green400',
-				},
-				invalid: {
-					$$Back: '$colors$red900',
-					$$Edge: '$colors$red600',
-					$$BackHover: '$colors$red800',
-					$$EdgeHover: '$colors$red300',
-					$$BackFocus: '$colors$red800',
-					$$EdgeFocus: '$colors$red400',
-				},
-			},
 		},
 	})
 </script>
 
-{#if multiline}
+{#if typeof lines === 'number'}
 	<Textarea
 		cls={ss}
-		vrt={{ look, size, rounding, stateful }}
+		vrt={{ look, size, rounding }}
 		{css}
 		bind:value
 		on:input
@@ -150,7 +81,7 @@
 {:else}
 	<Input
 		cls={ss}
-		vrt={{ look, size, rounding, stateful }}
+		vrt={{ look, size, rounding }}
 		{css}
 		bind:value
 		on:input
