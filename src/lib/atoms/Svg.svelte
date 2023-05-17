@@ -1,15 +1,28 @@
-<script>
-	export let viewBox
+<script lang="ts">
+	import { stitch } from '@/ui'
+	import type { PropCss, PropString, PropComponent } from '@/types'
 
-	// TEMP: removed
-	// fill-rule="evenodd"
-	// clip-rule="evenodd"
-	// stroke-line-join="round"
-	// stroke-linecap="round"
-	// stroke-linejoin="round"
-	// stroke-miter-limit={2}
+	export let id: PropString = undefined
+	export let cls: PropComponent = undefined
+	export let css: PropCss = undefined
+	export let style: PropString = undefined
+	export let vrt = {}
+
+	export let viewBox: string
+
+	const ss = cls || stitch({})
 </script>
 
-<svg {viewBox} x="0%" y="0%" width="100%" height="100%" {...$$props}>
+<svg
+	{id}
+	class={ss({ ...vrt, css })}
+	{viewBox}
+	x="0%"
+	y="0%"
+	width="100%"
+	height="100%"
+	{...$$props}
+	{style}
+>
 	<slot />
 </svg>
