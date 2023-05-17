@@ -1,20 +1,25 @@
 <script lang="ts">
+	import type { ComponentProps } from 'svelte'
+
+	import type { PropCss, PropString, PropBoolean } from '@/types'
+
 	import Link from './Link.svelte'
 	import Button from './Button.svelte'
 
-	export let url
-	export let fileName = undefined
+	export let css: PropCss = undefined
+
+	export let url: string
+	export let fileName: PropString = undefined
 	export let newTab = false
 
-	// export let css = null
-	// export let look = 'main'
-	// export let size = 'md'
-	// export let rounding = 'none'
-	// export let disabled = null
+	export let look: ComponentProps<Button>['look'] = undefined
+	export let size: ComponentProps<Button>['size'] = undefined
+	export let rounding: ComponentProps<Button>['rounding'] = undefined
+	export let disabled: PropBoolean = undefined
 </script>
 
-<Link {url} {fileName} {newTab} on:click look="clean">
-	<Button {...$$props}>
+<Link {url} {fileName} {newTab} look="clean">
+	<Button {css} {look} {size} {rounding} {disabled}>
 		<slot />
 	</Button>
 </Link>
