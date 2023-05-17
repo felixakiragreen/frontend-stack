@@ -1,20 +1,13 @@
 <script lang="ts">
 	import { stitch } from '@/ui'
-	import type { CSS } from '@/ui'
+	import type { PropCss, PropBoolean, VariantOption } from '@/types'
+	import { Span } from '@/atoms'
 
-	import { Span } from '@/lib/atoms'
-
-	// as text or as box
-
-	// this component handles all the break points shit for text...
-
-	// export let as = 'span'
-
-	export let css: CSS = null
-	export let all = null
-	export let no = null
-	export let sm = null
-	export let md = null
+	export let css: PropCss = undefined
+	export let all: PropBoolean = undefined
+	export let no: PropBoolean = undefined
+	export let above: VariantOption<typeof ss, 'above'> | undefined = undefined
+	export let below: VariantOption<typeof ss, 'below'> | undefined = undefined
 
 	const ss = stitch({
 		variants: {
@@ -29,19 +22,63 @@
 					whiteSpace: 'nowrap',
 				},
 			},
-			sm: {
-				true: {
-					//
+			above: {
+				xxs: {},
+				xs: {
+					display: 'none',
+					'@xs': {
+						display: 'initial',
+					},
+				},
+				sm: {
+					display: 'none',
+					'@sm': {
+						display: 'initial',
+					},
+				},
+				md: {
+					display: 'none',
+					'@md': {
+						display: 'initial',
+					},
+				},
+				lg: {
+					display: 'none',
+					'@lg': {
+						display: 'initial',
+					},
+				},
+				xl: {
+					display: 'none',
+					'@xl': {
+						display: 'initial',
+					},
+				},
+			},
+			below: {
+				xxs: {
+					'@xs': {
+						display: 'none',
+					},
+				},
+				xs: {
+					'@sm': {
+						display: 'none',
+					},
+				},
+				sm: {
 					'@md': {
 						display: 'none',
 					},
 				},
-			},
-			md: {
-				true: {
-					display: 'none',
-					'@md': {
-						display: 'initial',
+				md: {
+					'@lg': {
+						display: 'none',
+					},
+				},
+				lg: {
+					'@xl': {
+						display: 'none',
 					},
 				},
 			},
@@ -49,7 +86,7 @@
 	})
 </script>
 
-<Span cls={ss} vrt={{ all, no, sm, md }} {css}>
+<Span cls={ss} vrt={{ all, no, above, below }} {css}>
 	{#if $$slots.default}
 		<slot />
 	{:else}
