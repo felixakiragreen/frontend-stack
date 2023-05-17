@@ -16,16 +16,25 @@ export const {
 	theme: {
 		...tokens,
 	},
+	// media: {
+	// 	xxs: '(min-width: 0px)',
+	// 	xs: '(min-width: 320px)',
+	// 	sm: '(min-width: 640px)',
+	// 	md: '(min-width: 768px)',
+	// 	lg: '(min-width: 1024px)',
+	// 	xl: '(min-width: 1280px)',
+	// 	xxl: '(min-width: 1536px)',
+	// },
 	media: {
-		sm: '(min-width: 640px)',
-		md: '(min-width: 768px)',
+		xxs: '(min-width: 240px)',
+		xs: '(min-width: 320px)',
+		sm: '(min-width: 480px)',
+		md: '(min-width: 640px)',
 		lg: '(min-width: 1024px)',
 		xl: '(min-width: 1280px)',
-		'2xl': '(min-width: 1536px)',
+		xxl: '(min-width: 1536px)',
 	},
 	utils,
 })
-
-export type { Stitches }
 
 export type CSS = Stitches.CSS<typeof config>
