@@ -1,17 +1,14 @@
 <script lang="ts">
 	import { stitch } from '@/ui'
-	import type { CSS } from '@/ui'
+	import type { PropCss, PropBoolean, VariantOption } from '@/types'
+	import { Box } from '@/atoms'
 
-	import { Box } from '@/lib/atoms'
-
-	export let css: CSS = null
-	export let below = null
-	export let above = null
+	export let css: PropCss = undefined
+	export let below: VariantOption<typeof ss, 'below'> | undefined = undefined
+	export let above: VariantOption<typeof ss, 'above'> | undefined = undefined
 	export let inline = true
 
 	const ss = stitch({
-		// display: 'flex',
-
 		variants: {
 			inline: {
 				true: {
@@ -22,6 +19,18 @@
 				},
 			},
 			below: {
+				xxs: {
+					display: 'none',
+					'@xxs': {
+						display: 'initial',
+					},
+				},
+				xs: {
+					display: 'none',
+					'@xs': {
+						display: 'initial',
+					},
+				},
 				sm: {
 					display: 'none',
 					'@sm': {
@@ -42,6 +51,18 @@
 				},
 			},
 			above: {
+				xxs: {
+					display: 'initial',
+					'@xxs': {
+						display: 'none',
+					},
+				},
+				xs: {
+					display: 'initial',
+					'@xs': {
+						display: 'none',
+					},
+				},
 				sm: {
 					display: 'initial',
 					'@sm': {
