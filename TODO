@@ -8,4 +8,5 @@ FrontEndStackTodo:
       export let align: string | null = null
 	   export let alignV: string | null = null
       
-   [ ] pull over new & improved components from the-worm
+   [x] pull over new & improved components from the-worm
+   [ ] pull over Magic Button
