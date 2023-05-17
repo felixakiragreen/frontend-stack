@@ -1,25 +1,25 @@
 <script lang="ts">
 	import { stitch } from '@/ui'
-	import type { CSS } from '@/ui'
+	import type { PropCss, PropString, PropComponent } from '@/types'
 
-	export let id = null
-	export let cls = null
-	export let css: CSS = null
-	export let style = null
+	export let id: PropString = undefined
+	export let cls: PropComponent = undefined
+	export let css: PropCss = undefined
+	export let style: PropString = undefined
 	export let vrt = {}
 
 	export let value = ''
 	export let placeholder = ''
-	export let lines = null
-	let rows = lines !== null ? lines : undefined
+	export let lines: number | undefined = undefined
+	let rows = lines
 
 	const ss = cls || stitch({})
 </script>
 
 <textarea
+	{id}
 	class={ss({ ...vrt, css })}
 	{style}
-	{id}
 	bind:value
 	on:input
 	on:change
