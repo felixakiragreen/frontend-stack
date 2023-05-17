@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Span } from '@/lib/atoms'
-	import { Content, Stack, Inline, Text, Break, Grid } from '@/lib/bonds'
+	import { Span } from '@/atoms'
+	import { Content, VStack, HStack, Text, Break } from '@/bonds'
 
 	import type { PageData } from './$types'
 
@@ -12,7 +12,7 @@
 		bg: '$orange700',
 	}}
 >
-	<Stack
+	<VStack
 		css={{
 			bg: '$orange600',
 		}}
@@ -20,5 +20,5 @@
 		<h1>{data.title}</h1>
 		<div>{@html data.content}</div>
 		<Text>Body</Text>
-	</Stack>
+	</VStack>
 </Content>
