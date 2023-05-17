@@ -1,23 +1,41 @@
 <script lang="ts">
-	import { Box } from '@/lib/atoms'
+	import { stitch } from '@/ui'
+	import type { PropCss, PropString, VariantOption, Color } from '@/types'
+	import { Box } from '@/atoms'
 
 	import Text from './Text.svelte'
-	import Inline from './Inline.svelte'
+	import HStack from './HStack.svelte'
 	import Link from './Link.svelte'
 	import Button from './Button.svelte'
 
 	// import { abbrev } from '@/lib/funcs/abbrev'
 
-	export let hue = null
-	export let type = 'info'
+	export const id: PropString = undefined
+	export let hue: Color | undefined = undefined
+
+	type ToastType =
+		| 'info'
+		| 'requesting'
+		| 'pending'
+		| 'confirmed'
+		| 'failed'
+		| 'error'
+		| 'warning'
+		| 'new mint'
+		| 'transfer'
+
+	export let type: ToastType | string = 'info'
 	export let memo = 'memo'
-	// export let hash = null
-	// export let url = null
-	export let onClose = null
+	export let hash: PropString = undefined
+	export let url: PropString = undefined
+
+	type CloseFunction = (e: MouseEvent) => void
+
+	export let onClose: CloseFunction | undefined = undefined
 
 	const getColor = () => {
 		switch (true) {
-			case hue:
+			case typeof hue !== 'undefined':
 				return hue
 			case type == 'requesting':
 			case type == 'warning':
@@ -29,6 +47,8 @@
 				return 'red'
 			case type == 'confirmed':
 			case type == 'new mint':
+			case type == 'cart':
+			case type == 'success':
 				return 'green'
 			case type == 'transfer':
 				return 'purple'
@@ -40,14 +60,17 @@
 	$: clr = type && getColor()
 </script>
 
-<Inline
+<HStack
 	css={{
-		mx: '$8',
-		background: '$faded',
+		mx: '$0',
+		'@md': {
+			mx: '$8',
+		},
+		background: '$grey700',
 		'--cur': `$colors$${clr}400`,
 		fontFamily: '$mono',
 		p: '$4',
-		boxShadow: '-4px 4px 0px 0 rgba(0, 0, 0), 4px 4px 0px 0 rgba(0, 0, 0)',
+		borderRadius: '$base',
 	}}
 >
 	<Box
@@ -56,9 +79,10 @@
 			bg: 'var(--cur)',
 			m: '$-4',
 			mr: '$4',
+			borderRadius: '$base 0 0 $base',
 		}}
 	/>
-	<Inline alignV="center" css={{ flex: 1 }}>
+	<HStack alignV="center" css={{ flex: 1 }}>
 		<Text
 			css={{
 				fontFamily: '$mono',
@@ -67,13 +91,13 @@
 				flex: 1,
 			}}
 		>
-			<Text css={{ fontWeight: 'bold' }}>
+			<Text weight="thic">
 				{type}
 			</Text>
 			<Text css={{ color: '$grey300', wordWrap: 'break-all' }}>
 				{memo}
 			</Text>
-			<!-- {#if hash}
+			{#if hash && url}
 				<Link
 					newTab
 					{url}
@@ -86,32 +110,28 @@
 						},
 					}}
 				>
-					{abbrev(hash, false, 8)}
+					<!-- {abbrev(hash, false, 8)} -->
 				</Link>
-				<Text css={{ color: '$muted', fontSize: '$xs' }}>
+				<!-- <Text css={{ color: '$muted', fontSize: '$xs' }}>
 					(etherscan link, can take ~30 secs)
-				</Text>
-			{/if} -->
+				</Text> -->
+			{/if}
 		</Text>
 		{#if onClose}
 			<Button
 				on:click={onClose}
 				look="holo"
 				css={{
-					color: '$orange400',
 					size: '$10',
 					p: '$0',
-					fontSize: '$6xl',
-					fontFamily: '$main',
+					fontSize: '$4xl',
+					fontFamily: '$mono',
 					lineHeight: '34px',
 					display: 'flex',
 					justifyContent: 'center',
 					alignItems: 'baseline',
-					'&:hover': {
-						color: '$foreground',
-					},
 				}}>×</Button
 			>
 		{/if}
-	</Inline>
-</Inline>
+	</HStack>
+</HStack>
