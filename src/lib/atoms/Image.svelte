@@ -1,24 +1,25 @@
 <script lang="ts">
 	import { stitch } from '@/ui'
-	import type { CSS } from '@/ui'
+	import type { PropCss, PropString, PropComponent } from '@/types'
 
-	export let id = null
-	export let cls = null
-	export let css: CSS = null
-	export let style = null
+	export let id: PropString = undefined
+	export let cls: PropComponent = undefined
+	export let css: PropCss = undefined
+	export let style: PropString = undefined
+	export let vrt = {}
 
-	export let alt = 'image description'
-	export let url
-	export let url2x = null
+	export let alt: PropString = 'image description'
+	export let url: string
+	export let url2x: PropString = undefined
 
 	const ss = cls || stitch({})
 </script>
 
 <img
-	class={ss({ css })}
-	{alt}
+	{id}
+	class={ss({ ...vrt, css })}
 	src={url}
 	{...url2x ? { srcset: `${url2x} 2x` } : {}}
 	{style}
-	{id}
+	{alt}
 />
