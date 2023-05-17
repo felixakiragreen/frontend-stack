@@ -1,72 +1,24 @@
 <script lang="ts">
 	import { stitch } from '@/ui'
-	import type { CSS } from '@/ui'
-	import { baseColors } from '@/types'
+	import type { PropCss, PropString, PropBoolean, VariantOption } from '@/types'
+	import { Span, Para, Heading } from '@/atoms'
 
-	import { Span, Para, Heading } from '@/lib/atoms'
+	type TextType = 'span' | 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+	export let as: TextType = 'span'
 
-	export let as = 'span'
+	export let id: PropString = undefined
+	export let css: PropCss = undefined
 
-	export let id = null
-	export let css: CSS = null
-
-	export let look = null
-	export let br = null
-	export let nobr = null
-	export let size = null
-	export let color = null
-	export let align = null
-	export let mdx = null
+	export let size: VariantOption<typeof ss, 'size'> | undefined = undefined
+	export let weight: VariantOption<typeof ss, 'weight'> | undefined = undefined
+	export let look: VariantOption<typeof ss, 'look'> | undefined = undefined
+	export let color: VariantOption<typeof ss, 'color'> | undefined = undefined
+	export let br: PropBoolean = undefined
+	export let nobr: PropBoolean = undefined
+	export let pre: PropBoolean = undefined
 
 	const ss = stitch({
 		variants: {
-			look: {
-				heading: {
-					text: '$2xl',
-					// textTransform: 'uppercase',
-					fontWeight: '$black',
-					fontFamily: '$main',
-					'@md': {
-						text: '$3xl',
-					},
-				},
-				subheading: {
-					text: '$xl',
-					// textTransform: 'uppercase',
-					fontWeight: '$bold',
-					fontFamily: '$main',
-				},
-				subheading2: {
-					text: '$lg',
-					// textTransform: 'uppercase',
-					fontWeight: '$bold',
-					fontFamily: '$main',
-				},
-				mono: {
-					// textTransform: 'uppercase',
-					fontFamily: '$mono',
-				},
-				italic: {
-					fontStyle: 'italic',
-				},
-			},
-			// TODO: maybe breakpoints could be better
-			br: {
-				// breakpoints break
-				true: {
-					wordBreak: 'break-all',
-				},
-			},
-			nobr: {
-				true: {
-					whiteSpace: 'nowrap',
-				},
-			},
-
-			//
-			// defaults
-			//
-
 			size: {
 				xs: {
 					text: '$xs',
@@ -108,125 +60,194 @@
 					text: '$9xl',
 				},
 			},
+			weight: {
+				thinnn: {
+					// thin, 100
+					fontWeight: '$thinnn',
+				},
+				thinn: {
+					// extra light, ultra light, 200
+					fontWeight: '$thinn',
+				},
+				thin: {
+					// light, 300
+					fontWeight: '$thin',
+				},
+				book: {
+					// normal, book, regular, 400
+					fontWeight: '$book',
+				},
+				medi: {
+					// medium, 500
+					fontWeight: '$medi',
+				},
+				semi: {
+					// semi bold, demi bold, 600
+					fontWeight: '$semi',
+				},
+				thic: {
+					// bold, 700
+					fontWeight: '$thic',
+				},
+				thicc: {
+					// extra bold, ultra bold, 800
+					fontWeight: '$thicc',
+				},
+				thiccc: {
+					// black, heavy, 900
+					fontWeight: '$thiccc',
+				},
+			},
+			// mdx: {
+			// 	h1: {
+			// 		fontWeight: '$bold',
+			// 		text: '$4xl',
+			// 		'@md': {
+			// 			text: '$5xl',
+			// 		},
+			// 	},
+			// 	h2: {
+			// 		fontWeight: '$bold',
+			// 		my: '$3',
+			// 		text: '$3xl',
+			// 		'@md': {
+			// 			text: '$4xl',
+			// 		},
+			// 	},
+			// 	h3: {
+			// 		fontWeight: '$bold',
+			// 		text: '$2xl',
+			// 		'@md': {
+			// 			text: '$3xl',
+			// 		},
+			// 	},
+			// 	h4: {
+			// 		text: '$xl',
+			// 		'@md': {
+			// 			text: '$2xl',
+			// 		},
+			// 	},
+			// 	h5: {
+			// 		fontWeight: '$bold',
+			// 		text: '$lg',
+			// 		'@md': {
+			// 			text: '$xl',
+			// 		},
+			// 	},
+			// 	h6: {
+			// 		fontWeight: '$bold',
+			// 		text: '$md',
+			// 		'@md': {
+			// 			text: '$lg',
+			// 		},
+			// 	},
+			// 	p: {
+			// 		display: 'block',
+			// 		py: '$2',
+			// 		// text: '$lg',
+			// 		// fontWeight: '$semi',
+			// 		lineHeight: '$lg',
+			// 		text: '$sm',
+			// 		'@sm': {
+			// 			text: '$md',
+			// 		},
+			// 		'@md': {
+			// 			text: '$lg',
+			// 		},
+			// 	},
+			// 	a: {
+			// 		text: '$lg',
+			// 		fontWeight: '$bold',
+			// 		color: '$highlight',
+			// 		textDecoration: 'none',
+			// 		display: 'inline-block',
+			// 		transition: '$1',
+			// 		'&:hover': {
+			// 			// backgroundColor: '$felix',
+			// 			// color: '$indigo',
+			// 			backgroundColor: '$highlight',
+			// 			color: '$lowlight',
+			// 			cursor: 'pointer',
+			// 			px: '$1',
+			// 			mx: '$-1',
+			// 		},
+			// 	},
+			// 	ul: {
+			// 		display: 'block',
+			// 		py: '$2',
+			// 		text: '$lg',
+			// 		fontFamily: '$main',
+			// 		// fontWeight: '$semi',
+			// 		// lineHeight: '$2xl',
+			// 	},
+			// 	li: {
+			// 		fontWeight: '$semi',
+			// 	},
+			// },
 			color: {
+				worm: {
+					color: '$worm',
+				},
+				felix: {
+					color: '$felix',
+				},
 				muted: {
 					color: '$muted',
 				},
-				// TODO: this might need to handle 400, darker, lighter
-				...baseColors.reduce(
-					(acc, color) => ({
-						...acc,
-						[color]: {
-							color: `$${color}400`,
-						},
-					}),
-					{},
-				),
-			},
-			align: {
-				center: {
-					textAlign: 'center',
+				gold: {
+					color: '$worm_halo_gold',
 				},
-			},
-			mdx: {
-				h1: {
-					fontWeight: '$bold',
-					'@initial': {
-						text: '$4xl',
-					},
-					'@md': {
-						text: '$5xl',
-					},
-				},
-				h2: {
-					fontWeight: '$bold',
-					my: '$3',
-					'@initial': {
-						text: '$3xl',
-					},
-					'@md': {
-						text: '$4xl',
-					},
-				},
-				h3: {
-					fontWeight: '$bold',
-					'@initial': {
-						text: '$2xl',
-					},
-					'@md': {
-						text: '$3xl',
-					},
-				},
-				h4: {
-					text: '$2xl',
-					'@initial': {
-						text: '$xl',
-					},
-					'@md': {
-						text: '$2xl',
-					},
-				},
-				h5: {
-					fontWeight: '$bold',
-					'@initial': {
-						text: '$lg',
-					},
-					'@md': {
-						text: '$xl',
-					},
-				},
-				h6: {
-					fontWeight: '$bold',
-					'@initial': {
-						text: '$md',
-					},
-					'@md': {
-						text: '$lg',
-					},
-				},
-				p: {
-					display: 'block',
-					py: '$2',
-					// text: '$lg',
-					// fontWeight: '$semi',
-					lineHeight: '$lg',
-					'@initial': {
-						text: '$sm',
-					},
-					'@sm': {
-						text: '$md',
-					},
-					'@md': {
-						text: '$lg',
-					},
-				},
-				a: {
-					text: '$lg',
-					fontWeight: '$bold',
+				highlight: {
 					color: '$highlight',
-					textDecoration: 'none',
-					display: 'inline-block',
-					transition: '$1',
-					'&:hover': {
-						// backgroundColor: '$felixgreen',
-						// color: '$indigo',
-						backgroundColor: '$highlight',
-						color: '$lowlight',
-						cursor: 'pointer',
-						px: '$1',
-						mx: '$-1',
-					},
 				},
-				ul: {
-					display: 'block',
-					py: '$2',
-					text: '$lg',
-					fontFamily: '$main',
-					// fontWeight: '$semi',
-					// lineHeight: '$2xl',
+				lowlight: {
+					color: '$lowlight',
 				},
-				li: {
-					fontWeight: '$semi',
+				foreground: {
+					color: '$foreground',
+				},
+				background: {
+					color: '$background',
+				},
+			},
+			look: {
+				// subtitle: {
+				// 	color: '$gold',
+				// 	textTransform: 'uppercase',
+				// 	fontWeight: '$semi',
+				// },
+
+				captionHeading: {
+					text: '$md',
+					fontWeight: '$thicc',
+				},
+				caption: {
+					text: '$xs',
+					color: '$muted',
+					fontWeight: '$book',
+				},
+
+				mono: {
+					// textTransform: 'uppercase',
+					fontFamily: '$mono',
+				},
+			},
+			// TODO: maybe breakpoints could be better
+
+			br: {
+				// breakpoints break
+				true: {
+					wordBreak: 'break-all',
+				},
+			},
+			nobr: {
+				true: {
+					whiteSpace: 'nowrap',
+				},
+			},
+			pre: {
+				true: {
+					whiteSpace: 'pre-line',
 				},
 			},
 		},
@@ -235,20 +256,20 @@
 
 {#if as.startsWith('h')}
 	<Heading
+		{id}
 		cls={ss}
-		vrt={{ size, color, align, mdx, look, br, nobr }}
+		vrt={{ size, weight, color, look, br, nobr, pre }}
 		{css}
 		h={parseInt(as.slice(-1))}
-		{id}
 	>
 		<slot />
 	</Heading>
 {:else if as === 'p'}
-	<Para cls={ss} vrt={{ size, color, align, mdx, look, br, nobr }} {css}>
+	<Para {id} cls={ss} vrt={{ size, weight, color, look, br, nobr, pre }} {css}>
 		<slot />
 	</Para>
 {:else}
-	<Span cls={ss} vrt={{ size, color, align, mdx, look, br, nobr }} {css}>
+	<Span {id} cls={ss} vrt={{ size, weight, color, look, br, nobr, pre }} {css}>
 		<slot />
 	</Span>
 {/if}
