@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Svg } from '@/lib/atoms'
+	import { Svg } from '@/atoms'
 
 	export let viewBox = '4 4 28 28'
 	export let fill = 'none'
