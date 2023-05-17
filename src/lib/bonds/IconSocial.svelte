@@ -1,23 +1,31 @@
 <script lang="ts">
 	import { stitch } from '@/ui'
+	import {
+		type PropBoolean,
+		type PropString,
+		type PropCss,
+		type SocialLink,
+		IconTheme,
+	} from '@/types'
+	import { Box } from '@/atoms'
 
-	import { Box } from '@/lib/atoms'
 	import SvgSquare from './SvgSquare.svelte'
 	import SvgHexagon from './SvgHexagon.svelte'
 
-	export let brandHue
-	export let brandExact
-	export let path
-	export let transform
+	export let css: PropCss = undefined
 
-	export let shape = 'square'
-	export let rounded = null
+	export let brandHue: PropString = undefined
+	export let brandExact: PropString = undefined
+	export let path: PropString = undefined
+	export let transform: SocialLink['transform']
 
-	// variants
-	export let symbol = 'fg'
-	export let ground = 'bg'
-	export let hoverSymbol = null
-	export let hoverGround = null
+	export let shape: 'square' | 'hexagon' = 'square'
+	export let rounded: PropBoolean = undefined
+
+	export let symbol: IconTheme | undefined = IconTheme.Foreground
+	export let ground: IconTheme | undefined = IconTheme.Background
+	export let hoverSymbol: IconTheme | undefined = undefined
+	export let hoverGround: IconTheme | undefined = undefined
 
 	const ss = stitch({
 		transition: '$1',
@@ -33,110 +41,109 @@
 
 		variants: {
 			symbol: {
-				cl: {
+				[IconTheme.Clear]: {
 					'--stillSymbol': '$colors$clear',
 				},
-				cc: {
+				[IconTheme.CurrentColor]: {
 					'--stillSymbol': 'var(--currentColor)',
 				},
-				fg: {
+				[IconTheme.Foreground]: {
 					'--stillSymbol': '$colors$foreground',
 				},
-				bg: {
+				[IconTheme.Background]: {
 					'--stillSymbol': '$colors$background',
 				},
-				hl: {
+				[IconTheme.Highlight]: {
 					'--stillSymbol': '$colors$highlight',
 				},
-				ll: {
+				[IconTheme.Lowlight]: {
 					'--stillSymbol': '$colors$lowlight',
 				},
-				be: {
+				[IconTheme.BrandExact]: {
 					'--stillSymbol': 'var(--brandExact)',
 				},
-				bh: {
+				[IconTheme.BrandHue]: {
 					'--stillSymbol': 'var(--brandHue400)',
 				},
-				// TODO: eventually I could bh100-900
 			},
 			ground: {
 				//
-				cl: {
+				[IconTheme.Clear]: {
 					'--stillGround': '$colors$clear',
 				},
-				cc: {
+				[IconTheme.CurrentColor]: {
 					'--stillGround': 'var(--currentColor)',
 				},
-				fg: {
+				[IconTheme.Foreground]: {
 					'--stillGround': '$colors$foreground',
 				},
-				bg: {
+				[IconTheme.Background]: {
 					'--stillGround': '$colors$background',
 				},
-				hl: {
+				[IconTheme.Highlight]: {
 					'--stillGround': '$colors$highlight',
 				},
-				ll: {
+				[IconTheme.Lowlight]: {
 					'--stillGround': '$colors$lowlight',
 				},
-				be: {
+				[IconTheme.BrandExact]: {
 					'--stillGround': 'var(--brandExact)',
 				},
-				bh: {
+				[IconTheme.BrandHue]: {
 					'--stillGround': 'var(--brandHue400)',
 				},
 			},
 			hoverSymbol: {
 				//
-				cl: {
+				[IconTheme.Clear]: {
 					'--hoverSymbol': '$colors$clear',
 				},
-				cc: {
+				[IconTheme.CurrentColor]: {
 					'--hoverSymbol': 'var(--currentColor)',
 				},
-				fg: {
+				[IconTheme.Foreground]: {
 					'--hoverSymbol': '$colors$foreground',
 				},
-				bg: {
+				[IconTheme.Background]: {
 					'--hoverSymbol': '$colors$background',
 				},
-				hl: {
+				[IconTheme.Highlight]: {
 					'--hoverSymbol': '$colors$highlight',
 				},
-				ll: {
+				[IconTheme.Lowlight]: {
 					'--hoverSymbol': '$colors$lowlight',
 				},
-				be: {
+				[IconTheme.BrandExact]: {
 					'--hoverSymbol': 'var(--brandExact)',
 				},
-				bh: {
+				[IconTheme.BrandHue]: {
 					'--hoverSymbol': 'var(--brandHue400)',
 				},
 			},
 			hoverGround: {
 				//
-				cl: {
+				[IconTheme.Clear]: {
 					'--hoverGround': '$colors$clear',
 				},
-				cc: {
+				[IconTheme.CurrentColor]: {
 					'--hoverGround': 'var(--currentColor)',
 				},
-				fg: {
+				[IconTheme.Foreground]: {
 					'--hoverGround': '$colors$foreground',
 				},
-				bg: {
+				[IconTheme.Background]: {
 					'--hoverGround': '$colors$background',
 				},
-				hl: {
+				[IconTheme.Highlight]: {
 					'--hoverGround': '$colors$highlight',
 				},
-				ll: {
+				[IconTheme.Lowlight]: {
 					'--hoverGround': '$colors$lowlight',
 				},
-				be: {
+				[IconTheme.BrandExact]: {
 					'--hoverGround': 'var(--brandExact)',
 				},
-				bh: {
+				[IconTheme.BrandHue]: {
 					'--hoverGround': 'var(--brandHue400)',
 				},
 			},
@@ -152,6 +159,7 @@
 		--brandHue: {brandHue};
 		--brandHue400: var(--colors-{brandHue}400);
 	"
+	{css}
 >
 	{#if shape === 'square'}
 		<SvgSquare fill="currentcolor">
