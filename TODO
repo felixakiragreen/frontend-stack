@@ -3,7 +3,7 @@ FrontEndStackTodo:
       vite-imagetools?
    [ ] update to OKLCH
       oklch.com
-   [ ] rename Stack & Inline to HStack & VStack
+   [x] rename Stack & Inline to HStack & VStack
    [x] fix TypeScript types
       export let align: string | null = null
 	   export let alignV: string | null = null
