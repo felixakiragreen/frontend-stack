@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { Box, Span } from '@/atoms'
 	import { Content, VStack, HStack, Text, Break } from '@/bonds'
+
+	import Atoms from './atoms.svelte'
+	import Space from './space.svelte'
 </script>
 
 <Content
@@ -22,5 +25,8 @@
 				width: '$1',
 			}}
 		/>
+
+		<Atoms />
+		<Space />
 	</VStack>
 </Content>
