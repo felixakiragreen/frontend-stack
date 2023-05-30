@@ -1,158 +1,65 @@
 import type * as Stitches from '@stitches/core'
 import { colors } from './color'
 
-const space = {
-	0: '0px', // 0px
-	px: '1px', // 1px
-	'0_5': '0.125rem', // 2px
-	1: '0.25rem', // 4px
-	'1_5': '0.375rem', // 6px
-	2: '0.5rem', // 8px
-	'2_5': '0.625rem', // 10px
-	3: '0.75rem', // 12px
-	'3_5': '0.875rem', // 14px
-	4: '1rem', // 16px
-	5: '1.25rem', // 20px
-	6: '1.5rem', // 24px
-	7: '1.75rem', // 28px
-	8: '2rem', // 32px
-	9: '2.25rem', // 36px
-	10: '2.5rem', // 40px
-	11: '2.75rem', // 44px
-	12: '3rem', // 48px
-	14: '3.5rem', // 56px
-	16: '4rem', // 64px
-	20: '5rem', // 80px
-	24: '6rem', // 96px
-	28: '7rem', // 112px
-	32: '8rem', // 128px
-	36: '9rem', // 144px
-	40: '10rem', // 160px
-	44: '11rem', // 176px
-	48: '12rem', // 192px
-	52: '13rem', // 208px
-	56: '14rem', // 224px
-	60: '15rem', // 240px
-	64: '16rem', // 256px
-	72: '18rem', // 288px
-	80: '20rem', // 320px
-	96: '24rem', // 384px
-	112: '28rem', // 448px
-	128: '32rem', // 512px
-	144: '36rem', // 576px
-	160: '40rem', // 640px
-	'-px': '-1px', // 1px
-	'-0_5': '-0.125rem', // 2px
-	'-1': '-0.25rem', // 4px
-	'-1_5': '-0.375rem', // 6px
-	'-2': '-0.5rem', // 8px
-	'-2_5': '-0.625rem', // 10px
-	'-3': '-0.75rem', // 12px
-	'-3_5': '-0.875rem', // 14px
-	'-4': '-1rem', // 16px
-	'-5': '-1.25rem', // 20px
-	'-6': '-1.5rem', // 24px
-	'-7': '-1.75rem', // 28px
-	'-8': '-2rem', // 32px
-	'-9': '-2.25rem', // 36px
-	'-10': '-2.5rem', // 40px
-	'-11': '-2.75rem', // 44px
-	'-12': '-3rem', // 48px
-	'-14': '-3.5rem', // 56px
-	'-16': '-4rem', // 64px
-	'-20': '-5rem', // 80px
-	'-24': '-6rem', // 96px
-	'-28': '-7rem', // 112px
-	'-32': '-8rem', // 128px
-	'-36': '-9rem', // 144px
-	'-40': '-10rem', // 160px
-	'-44': '-11rem', // 176px
-	'-48': '-12rem', // 192px
-	'-52': '-13rem', // 208px
-	'-56': '-14rem', // 224px
-	'-60': '-15rem', // 240px
-	'-64': '-16rem', // 256px
-	'-72': '-18rem', // 288px
-	'-80': '-20rem', // 320px
-	'-96': '-24rem', // 384px
-	'-112': '-28rem', // 448px
-	'-128': '-32rem', // 512px
-	'-144': '-36rem', // 576px
-	'-160': '-40rem', // 640px
-}
+import { fontSizes } from './fluid'
 
-const spacing = {
-	no: space[0],
-	xs: space[1],
-	sm: space[2],
-	md: space[4],
-	lg: space[6],
-	xl: space[8],
-	'2xl': space[10],
-	'3xl': space[12],
-	'4xl': space[16],
-	'5xl': space[20],
-	'6xl': space[24],
-	'7xl': space[28],
-	'8xl': space[32],
-	'9xl': space[36],
-}
+// TODO: import fluid fonts
+// TODO: import fluid spacing
+// TODO: import fluid sizes
+// TODO: fluid space 0-9 size 10-19
 
 // create a util...
 
-const max = {
-	full: '100%',
-	min: 'min-content',
-	max: 'max-content',
-	prose: '65ch', // characters
-	'screen-vw': '100vw',
-	'screen-vh': '100vh',
-	'screen-sm': '480px',
-	'screen-md': '640px',
-	'screen-lg': '1024px',
-	'screen-xl': '1280px',
-	'screen-xxl': '1536px',
+const radii = {
+	'0': '0px', // 0px
+	'1': '0.125rem', // 2px
+	'2': '0.25rem', // 4px
+	'3': '0.375rem', // 6px
+	'4': '0.5rem', // 8px
+	'5': '0.75rem', // 12px
+	'6': '1rem', // 16px
+	'7': '1.5rem', // 24px
+	'8': '2rem', // 32px
+	'9': '2.5rem', // 40px
+	'10': '9999px', // 9999px
 }
 
-const radii = {
-	no: '0px', // 0px
-	xs: '0.125rem', // 2px
-	sm: '0.25rem', // 4px
-	md: '0.375rem', // 6px
-	lg: '0.5rem', // 8px
-	xl: '0.75rem', // 12px
-	'2xl': '1rem', // 16px
-	'3xl': '1.5rem', // 24px
-	'4xl': '2rem', // 32px
-	'5xl': '2.5rem', // 40px
-	full: '9999px', // 9999px
+const borderWidths = {
+	'0': '0px',
+	'1': '1px',
+	'2': '2px',
+	'3': '3px',
+	'4': '4px',
+	'5': '6px',
+	'6': '8px',
+	'7': '10px',
+	'8': '12px',
+	'9': '16px',
+}
+
+const fontWeights = {
+	'100': '100', // thin
+	'200': '200', // extra light, ultra light
+	'300': '300', // light
+	'400': '400', // normal, book, regular
+	'500': '500', // medium
+	'600': '600', // semi bold, demi bold
+	'700': '700', // bold
+	'800': '800', // extra bold, ultra bold
+	'900': '900', // black, heavy
 }
 
 export const tokens = {
 	colors,
 	space: {
-		...space,
-		...spacing,
+		// ...space,
+		// ...spacing,
 	},
 	sizes: {
-		...space,
-		...max,
+		// ...space,
+		// ...max,
 	},
-	fontSizes: {
-		xs: '0.75rem',
-		sm: '0.875rem',
-		md: '1rem',
-		lg: '1.125rem',
-		xl: '1.25rem',
-		'2xl': '1.5rem',
-		'3xl': '1.875rem',
-		'4xl': '2.25rem',
-		'5xl': '3rem',
-		'6xl': '3.75rem',
-		'7xl': '4.5rem',
-		'8xl': '6rem',
-		'9xl': '8rem',
-	},
+	fontSizes,
 	fonts: {
 		main: 'Inter, georgia, apple-system, sans-serif',
 		mono: '"Azeret Mono", menlo, monospace',
@@ -169,55 +76,43 @@ export const tokens = {
 		thicc: '800', // extra bold, ultra bold
 		thiccc: '900', // black, heavy
 	},
-	lineHeights: {
-		xs: '1rem',
-		sm: '1.25rem',
-		md: '1.5rem',
-		lg: '1.75rem',
-		xl: '2rem',
-		'2xl': '2.25rem',
-		'3xl': '2.5rem',
-		'4xl': '2.75rem',
-		'5xl': '1',
-		'6xl': '1',
-		'7xl': '1',
-		'8xl': '1',
-		'9xl': '1',
-	},
+	// TODO: redo line heights
+
 	//
 	// letterSpacings: {},
-	// sizes: {},
 	borders: {
 		no: '0',
 		muted: '1px solid $colors$muted',
 	},
 	borderWidths: {
-		'0': '0px',
-		'1': '1px',
-		'2': '2px',
-		'3': '3px',
-		'4': '4px',
-		'5': '6px',
-		'6': '8px',
-		'7': '10px',
-		'8': '12px',
-		'9': '16px',
+		...borderWidths,
+		no: borderWidths['0'],
+		xs: borderWidths['1'],
+		sm: borderWidths['2'],
+		md: borderWidths['3'],
+		lg: borderWidths['4'],
+		xl: borderWidths['5'],
+		'2xl': borderWidths['6'],
+		'3xl': borderWidths['7'],
+		'4xl': borderWidths['8'],
+		'5xl': borderWidths['9'],
 	},
 	borderStyles: {},
 	radii: {
 		...radii,
-		'0': radii['no'],
-		'1': radii['xs'],
-		'2': radii['sm'],
-		'3': radii['md'],
-		'4': radii['lg'],
-		'5': radii['xl'],
-		'6': radii['2xl'],
-		'7': radii['3xl'],
-		'8': radii['4xl'],
-		'9': radii['5xl'],
-		'10': radii['full'],
+		no: radii['0'],
+		xs: radii['1'],
+		sm: radii['2'],
+		md: radii['3'],
+		lg: radii['4'],
+		xl: radii['5'],
+		'2xl': radii['6'],
+		'3xl': radii['7'],
+		'4xl': radii['8'],
+		'5xl': radii['9'],
+		full: radii['10'],
 	},
+	// TODO: redo shadows
 	shadows: {
 		popup: '0 0 6px 0 rgba(0, 0, 0, 0.67)',
 		sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
@@ -232,6 +127,7 @@ export const tokens = {
 		none: 'none',
 	},
 	// zIndices: {},
+	// TODO: redo transitions
 	transitions: {
 		1: 'all cubic-bezier(0.4, 0, 0.2, 1) 150ms',
 		2: 'opacity cubic-bezier(0.4, 0, 0.2, 1) 150ms',
