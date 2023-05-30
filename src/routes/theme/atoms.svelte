@@ -1,6 +1,14 @@
 <script lang="ts">
-	import { Box, Span } from '@/atoms'
-	import { Content, VStack, HStack, Text, Break } from '@/bonds'
+	import {
+		Box,
+		Span,
+		Content,
+		Button,
+		VStack,
+		HStack,
+		Text,
+		Break,
+	} from '@/fui'
 </script>
 
 <VStack
@@ -8,5 +16,6 @@
 		bg: '$orange600',
 	}}
 >
-	<Text>Atoms</Text>
+	<Text>Atoms are cool</Text>
+	<Button look="holo">Holo Button</Button>
 </VStack>
