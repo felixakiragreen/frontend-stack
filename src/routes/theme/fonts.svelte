@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { Box, Span, Content, VStack, HStack, Text, Break } from '@/fui'
 
-	import { fluidFontAliases } from '@/fui/style/fluid'
+	import { fluidFontAliases } from '@/fui/fluid'
 
-	// # array from 1 to 9
+	// array from 1 to 9
 	const length = 9
 	const array = Array.from({ length }, (_, i) => i + 1)
 </script>
