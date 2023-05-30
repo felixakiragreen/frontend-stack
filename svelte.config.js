@@ -15,9 +15,6 @@ const config = {
 	kit: {
 		adapter: netlify(),
 		alias: {
-			'@/atoms': '/src/lib/atoms',
-			'@/bonds': '/src/lib/bonds',
-			'@/cells': '/src/lib/cells',
 			'@': '/src',
 		},
 	},
