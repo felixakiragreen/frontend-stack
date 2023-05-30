@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { Box, Span } from '@/atoms'
-	import { Content, VStack, HStack, Text, Break } from '@/bonds'
+	import { Box, Content, VStack, HStack, Text, Break } from '@/fui'
 
 	import Atoms from './atoms.svelte'
 	import Space from './space.svelte'
@@ -17,15 +16,8 @@
 			bg: '$orange600',
 		}}
 	>
+		<!-- TODO: make a heading	 -->
 		<Text>Theme</Text>
-
-		<Box
-			css={{
-				bg: '$green500',
-				height: '$1',
-				width: '$1',
-			}}
-		/>
 
 		<Atoms />
 		<Space />
