@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { Box } from '@/atoms'
-	import { Content, VStack, HStack, Text, Break } from '@/bonds'
+	import { Box, Content, VStack, HStack, Text, Break } from '@/fui'
 
 	function r(n: number) {
 		// return square root of 6 divided by 2 to the power of n
