@@ -10,15 +10,7 @@
 
 		mx: 'auto',
 		maxWidth: '$screen-lg',
-		py: '$4',
-
-		px: '$4',
-		'@sm': {
-			px: '$8',
-		},
-		'@xl': {
-			px: '$0',
-		},
+		p: '$sm',
 	})
 </script>
 
