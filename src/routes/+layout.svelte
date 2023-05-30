@@ -1,8 +1,8 @@
 <script lang="ts">
-	import '@/lib/style/global.css'
-	import { stitch, getCssText } from '@/ui'
+	import '@/fui/style/global.css'
+	import { stitch, getCssText } from '@/fui/ui'
 
-	import { Header, Footer } from '@/lib/cells'
+	import { Header, Footer } from '@/lib/components'
 
 	const ss = stitch({
 		display: 'grid',
