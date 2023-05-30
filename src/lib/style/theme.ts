@@ -1,5 +1,5 @@
 import type * as Stitches from '@stitches/core'
-import { colors } from './colors'
+import { colors } from './color'
 
 const space = {
 	0: '0px', // 0px
