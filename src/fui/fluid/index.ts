@@ -1,3 +1,3 @@
-export * from './fluidFonts'
-export * from './fluidSpace'
-export * from './fluidSizes'
+export * from './fonts'
+export * from './spaces'
+export * from './sizes'
