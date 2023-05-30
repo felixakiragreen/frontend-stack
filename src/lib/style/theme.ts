@@ -1,7 +1,7 @@
 import type * as Stitches from '@stitches/core'
 import { colors } from './color'
 
-import { fontSizes } from './fluid'
+import { fontSizes, space, sizes } from './fluid'
 
 // TODO: import fluid fonts
 // TODO: import fluid spacing
@@ -52,11 +52,12 @@ const fontWeights = {
 export const tokens = {
 	colors,
 	space: {
-		// ...space,
+		...space,
 		// ...spacing,
 	},
 	sizes: {
 		// ...space,
+		...sizes,
 		// ...max,
 	},
 	fontSizes,
