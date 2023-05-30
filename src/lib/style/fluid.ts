@@ -41,6 +41,16 @@ export const fluidFont = {
 	'9': 'clamp(3.82rem, calc(2.70rem + 5.56vw), 7.01rem)', // Step 6: 61.04px → 112.20px
 }
 
+fluidFont[1] = fluidFont['1']
+fluidFont[2] = fluidFont['2']
+fluidFont[3] = fluidFont['3']
+fluidFont[4] = fluidFont['4']
+fluidFont[5] = fluidFont['5']
+fluidFont[6] = fluidFont['6']
+fluidFont[7] = fluidFont['7']
+fluidFont[8] = fluidFont['8']
+fluidFont[9] = fluidFont['9']
+
 const fluidFontAliases = {
 	// t-shirt sizes
 	shirt: {
@@ -79,6 +89,8 @@ const fluidFontAliases = {
 		step_6: fluidFont['9'],
 	},
 }
+
+// console.log('fluidFont', fluidFont[1])
 
 // TYPE
 
