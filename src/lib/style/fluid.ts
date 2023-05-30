@@ -29,7 +29,7 @@
 // 	--step-6: clamp(3.82rem, calc(2.70rem + 5.56vw), 7.01rem);
 //  }
 
-export const fluidFont = {
+const fluidFontBase = {
 	'1': 'clamp(0.64rem, calc(0.62rem + 0.11vw), 0.70rem)', // Step -2: 10.24px → 11.26px
 	'2': 'clamp(0.80rem, calc(0.75rem + 0.24vw), 0.94rem)', // Step -1: 12.80px → 15.00px
 	'3': 'clamp(1.00rem, calc(0.91rem + 0.43vw), 1.25rem)', // Step 0: 16.00px → 20.00px
@@ -41,54 +41,61 @@ export const fluidFont = {
 	'9': 'clamp(3.82rem, calc(2.70rem + 5.56vw), 7.01rem)', // Step 6: 61.04px → 112.20px
 }
 
-fluidFont[1] = fluidFont['1']
-fluidFont[2] = fluidFont['2']
-fluidFont[3] = fluidFont['3']
-fluidFont[4] = fluidFont['4']
-fluidFont[5] = fluidFont['5']
-fluidFont[6] = fluidFont['6']
-fluidFont[7] = fluidFont['7']
-fluidFont[8] = fluidFont['8']
-fluidFont[9] = fluidFont['9']
+export const fluidFont = addKeys(fluidFontBase)
 
-const fluidFontAliases = {
-	// t-shirt sizes
-	shirt: {
-		xs: fluidFont['1'],
-		sm: fluidFont['2'],
-		md: fluidFont['3'],
-		lg: fluidFont['4'],
-		xl: fluidFont['5'],
-		'2xl': fluidFont['6'],
-		'3xl': fluidFont['7'],
-		'4xl': fluidFont['8'],
-		'5xl': fluidFont['9'],
-	},
-	// typographical sizes
-	typo: {
-		c2: fluidFont['1'],
-		c1: fluidFont['2'],
-		b: fluidFont['3'],
-		h6: fluidFont['4'],
-		h5: fluidFont['5'],
-		h4: fluidFont['6'],
-		h3: fluidFont['7'],
-		h2: fluidFont['8'],
-		h1: fluidFont['9'],
-	},
-	// fluid steps
-	step: {
-		'step_-2': fluidFont['1'],
-		'step_-1': fluidFont['2'],
-		step_0: fluidFont['3'],
-		step_1: fluidFont['4'],
-		step_2: fluidFont['5'],
-		step_3: fluidFont['6'],
-		step_4: fluidFont['7'],
-		step_5: fluidFont['8'],
-		step_6: fluidFont['9'],
-	},
+const shirtBase = {
+	xs: fluidFont['1'],
+	sm: fluidFont['2'],
+	md: fluidFont['3'],
+	lg: fluidFont['4'],
+	xl: fluidFont['5'],
+	'2xl': fluidFont['6'],
+	'3xl': fluidFont['7'],
+	'4xl': fluidFont['8'],
+	'5xl': fluidFont['9'],
 }
+
+const shirt = addKeys(shirtBase)
+
+const typoBase = {
+	c2: fluidFont['1'],
+	c1: fluidFont['2'],
+	b: fluidFont['3'],
+	h6: fluidFont['4'],
+	h5: fluidFont['5'],
+	h4: fluidFont['6'],
+	h3: fluidFont['7'],
+	h2: fluidFont['8'],
+	h1: fluidFont['9'],
+}
+
+const typo = addKeys(typoBase)
+
+const stepBase = {
+	'step_-2': fluidFont['1'],
+	'step_-1': fluidFont['2'],
+	step_0: fluidFont['3'],
+	step_1: fluidFont['4'],
+	step_2: fluidFont['5'],
+	step_3: fluidFont['6'],
+	step_4: fluidFont['7'],
+	step_5: fluidFont['8'],
+	step_6: fluidFont['9'],
+}
+
+const step = addKeys(stepBase)
+
+export const fluidFontAliases = {
+	// t-shirt sizes
+	shirt,
+	// typographical sizes
+	typo,
+	// fluid steps
+	step,
+}
+
+// fluidFontAliases['shirt']['1x'] = 'adsf'
+// [1] = 'xs'
 
 // console.log('fluidFont', fluidFont[1])
 
@@ -97,9 +104,9 @@ const fluidFontAliases = {
 export const fontSizes = {
 	...fluidFont,
 	// shortcuts
-	...fluidFontAliases.shirt,
-	...fluidFontAliases.typo,
-	...fluidFontAliases.step,
+	// ...fluidFontAliases.shirt,
+	// ...fluidFontAliases.typo,
+	// ...fluidFontAliases.step,
 }
 
 // SPACE
@@ -248,3 +255,29 @@ export const size = {
 	'8': fluidSize['2xl'],
 	'9': fluidSize['3xl'],
 }
+
+// function addKeys<T: object>(obj: T): T & { keys: (string | null)[] } {
+// 	let keys: (string | null)[] = Object.keys(obj)
+// 	keys.unshift(null)
+// 	obj.keys = keys
+
+// 	return obj
+// }
+
+// function addKeys(obj: any): any {
+// 	let keys: (string | null)[] = Object.keys(obj)
+// 	keys.unshift(null)
+// 	obj.keys = keys
+
+// 	return obj
+// }
+
+function addKeys<T extends object>(obj: T): T & { keys: (string | null)[] } {
+	let keys: (string | null)[] = Object.keys(obj)
+	keys.unshift(null)
+	let newObj = { ...obj, keys }
+
+	return newObj as T & { keys: (string | null)[] }
+}
+
+// is it possible to rewrite this function so that it doesn't take any as a parameter, instead it takes a generic object and returns a generic object that inclues the `keys` property?
