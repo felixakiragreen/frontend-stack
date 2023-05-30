@@ -4,6 +4,7 @@
 
 	import Atoms from './atoms.svelte'
 	import Space from './space.svelte'
+	import Fonts from './fonts.svelte'
 </script>
 
 <Content
@@ -28,5 +29,6 @@
 
 		<Atoms />
 		<Space />
+		<Fonts />
 	</VStack>
 </Content>
