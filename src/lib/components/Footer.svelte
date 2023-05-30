@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { stitch, Inline, Stack, Content, Text } from '@/fui'
+	import { stitch, Content, Text } from '@/fui'
 
 	const ss = stitch({
 		// position: 'relative',
