@@ -1,7 +1,7 @@
 import type * as Stitches from '@stitches/core'
 import { colors } from './color'
 
-import { fontSizes, space, sizes } from './fluid'
+import { fontSizes, space, sizes } from '../fluid'
 
 // TODO: import fluid fonts
 // TODO: import fluid spacing
