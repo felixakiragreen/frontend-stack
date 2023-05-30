@@ -1,4 +1,4 @@
-import { addKeys } from '../style/utils'
+import { addKeys } from './utils'
 
 // SPACE
 

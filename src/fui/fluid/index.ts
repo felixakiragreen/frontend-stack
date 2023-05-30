@@ -1,3 +1,3 @@
 export * from './fonts'
-export * from './spaces'
+export * from './space'
 export * from './sizes'
