@@ -1,4 +1,4 @@
-import { addKeys } from './utils'
+import { addKeys } from '../style/utils'
 
 /* @link https://utopia.fyi/type/calculator?c=320,16,1.25,1240,20,1.333,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
