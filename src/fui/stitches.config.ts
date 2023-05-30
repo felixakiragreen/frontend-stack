@@ -1,7 +1,7 @@
 import { createStitches } from '@stitches/core'
 import type * as Stitches from '@stitches/core'
 
-import { tokens, utils } from '@/lib/style/theme'
+import { tokens, utils } from '@/fui/style/theme'
 
 export const {
 	css,
