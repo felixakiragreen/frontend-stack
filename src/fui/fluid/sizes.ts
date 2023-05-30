@@ -35,14 +35,13 @@ import { addKeys } from './utils'
 // }
 
 export const fluidSizeBase = {
+	'0': 'clamp(5.00rem, calc(4.13rem + 4.35vw), 7.50rem)', // Between: 80px → 120px
 	'1': 'clamp(6.00rem, calc(4.96rem + 5.22vw), 9.00rem)', // Step 3xs: 96px → 144px
 	'2': 'clamp(8.00rem, calc(6.61rem + 6.96vw), 12.00rem)', // Step 2xs: 128px → 192px
 	'3': 'clamp(10.00rem, calc(8.26rem + 8.70vw), 15.00rem)', // Step xs: 160px → 240px
-	//
 	'4': 'clamp(12.00rem, calc(9.91rem + 10.43vw), 18.00rem)', // Step sm: 192px → 288px
 	'5': 'clamp(16.00rem, calc(13.22rem + 13.91vw), 24.00rem)', // Step md: 256px → 384px
 	'6': 'clamp(20.00rem, calc(16.52rem + 17.39vw), 30.00rem)', // Step lg: 320px → 480px
-	//
 	'7': 'clamp(24.00rem, calc(19.83rem + 20.87vw), 36.00rem)', // Step xl: 384px → 576px
 	'8': 'clamp(32.00rem, calc(26.43rem + 27.83vw), 48.00rem)', // Step 2xl: 512px → 768px
 	'9': 'clamp(40.00rem, calc(33.04rem + 34.78vw), 60.00rem)', // Step 3xl: 640px → 960px
@@ -51,15 +50,16 @@ export const fluidSizeBase = {
 const fluidSize = addKeys(fluidSizeBase)
 
 const shirtBase = {
-	'3xs': fluidSize['1'],
-	'2xs': fluidSize['2'],
-	xs: fluidSize['3'],
-	sm: fluidSize['4'],
-	md: fluidSize['5'],
-	lg: fluidSize['6'],
-	xl: fluidSize['7'],
-	'2xl': fluidSize['8'],
-	'3xl': fluidSize['9'],
+	'2xs': fluidSize['0'],
+	xs: fluidSize['1'],
+	sm: fluidSize['2'],
+	md: fluidSize['3'],
+	lg: fluidSize['4'],
+	xl: fluidSize['5'],
+	'2xl': fluidSize['6'],
+	'3xl': fluidSize['7'],
+	'4xl': fluidSize['8'],
+	'5xl': fluidSize['9'],
 }
 
 const shirt = addKeys(shirtBase)
