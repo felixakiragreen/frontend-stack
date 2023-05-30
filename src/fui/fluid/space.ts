@@ -77,7 +77,6 @@ const uniqueSizes = {
 	px: '1px',
 }
 
-// TODO: get negatives working
 // TODO: get sizes as 10-19
 
 export const space = {
