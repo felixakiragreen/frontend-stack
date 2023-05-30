@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { Box, Span } from '@/atoms'
-	import { Content, VStack, HStack, Text, Break } from '@/bonds'
+	import { Box, Span, Content, VStack, HStack, Text, Break } from '@/fui'
 
-	import { fluidFontAliases } from '@/lib/style/fluid'
+	import { fluidFontAliases } from '@/fui/style/fluid'
 
 	// # array from 1 to 9
 	const length = 9
