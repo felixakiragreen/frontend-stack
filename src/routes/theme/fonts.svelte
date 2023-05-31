@@ -18,9 +18,9 @@
 	{#each array as a}
 		<Text css={{ fontSize: `$${a}` }}>
 			{a} -
-			{fluidFontAliases.shirt.keys[a]}
-			{fluidFontAliases.typo.keys[a]}
-			{fluidFontAliases.step.keys[a]}
+			{fluidFontAliases.shirtKeys[a]}
+			{fluidFontAliases.typoKeys[a]}
+			{fluidFontAliases.stepKeys[a]}
 		</Text>
 	{/each}
 </VStack>
