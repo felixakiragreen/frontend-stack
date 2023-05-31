@@ -1,9 +1,15 @@
-export function addKeys<T extends object>(obj: T): T & { keys: string[] } {
+export function extractKeys<T extends object>(obj: T): string[] {
 	let keys: string[] = Object.keys(obj)
 	if (keys.length === 9) {
 		keys.unshift('no')
 	}
-	let newObj = { ...obj, keys }
+
+	return keys
+}
+
+export function addKeys<T extends object>(obj: T): T & { keys: string[] } {
+	const keys: string[] = extractKeys(obj)
+	const newObj = { ...obj, keys }
 
 	return newObj as T & { keys: string[] }
 }
