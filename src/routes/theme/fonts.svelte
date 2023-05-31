@@ -8,11 +8,7 @@
 	const array = Array.from({ length }, (_, i) => i + 1)
 </script>
 
-<VStack
-	css={{
-		bg: '$orange600',
-	}}
->
+<VStack bg="grey900">
 	<Text>Fonts</Text>
 
 	{#each array as a}
