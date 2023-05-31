@@ -1,41 +1,28 @@
-import { fluidSpace, fluidSpaceAliases } from '../fluid'
 import type { CSS } from '../types'
+import { theme } from '../stitches.config'
 
-type ShirtKey =
-	| 'xs'
-	| 'sm'
-	| 'md'
-	| 'lg'
-	| 'xl'
-	| 'no'
-	| '2xl'
-	| '3xl'
-	| '4xl'
-	| '5xl'
+// Useful Reference: https://konstantin.digital/blog/generating-stitches-variants-for-theme-colors
 
 export function generateSpaceVariants(property: string) {
-	const object: {
-		[key in ShirtKey]: CSS
-	} = {
-		xs: {},
-		sm: {},
-		md: {},
-		lg: {},
-		xl: {},
-		no: {},
-		'2xl': {},
-		'3xl': {},
-		'4xl': {},
-		'5xl': {},
-	}
-
-	fluidSpaceAliases.shirtKeys.forEach((value, index) => {
-		object[value as ShirtKey] = {
-			[property]: `$${index}`,
+	return Object.values(theme.space).reduce((prev, curr) => {
+		return {
+			//
+			...prev,
+			[curr.token]: {
+				[property]: `$${curr.token}`,
+			},
 		}
-	})
-	return object
+	}, {}) as Record<keyof typeof theme.space, CSS>
 }
 
-// useful: https://konstantin.digital/blog/generating-stitches-variants-for-theme-colors
-// make color variants
+export function generateColorVariants(property: string) {
+	return Object.values(theme.colors).reduce((prev, curr) => {
+		return {
+			//
+			...prev,
+			[curr.token]: {
+				[property]: `$${curr.token}`,
+			},
+		}
+	}, {}) as Record<keyof typeof theme.colors, CSS>
+}
