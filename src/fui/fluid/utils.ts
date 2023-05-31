@@ -1,13 +1,11 @@
-export function addKeys<T extends object>(
-	obj: T,
-): T & { keys: (string | null)[] } {
+export function addKeys<T extends object>(obj: T): T & { keys: string[] } {
 	let keys: string[] = Object.keys(obj)
 	if (keys.length === 9) {
 		keys.unshift('no')
 	}
 	let newObj = { ...obj, keys }
 
-	return newObj as T & { keys: (string | null)[] }
+	return newObj as T & { keys: string[] }
 }
 
 // This function works in two steps:
