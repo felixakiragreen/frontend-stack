@@ -1,4 +1,4 @@
-import { addKeys } from './utils'
+import { addKeys, extractKeys } from './utils'
 
 /* @link https://utopia.fyi/space/calculator?c=320,16,1.2,1240,24,1.25,5,2,&s=,6|8|10|12|16|20|24|32|40,s-l&g=s,l,xl,12 */
 
@@ -34,7 +34,7 @@ import { addKeys } from './utils'
 // 	--space-7xl: clamp(40.00rem, calc(33.04rem + 34.78vw), 60.00rem);
 // }
 
-export const fluidSizeBase = {
+export const fluidSize = {
 	'0': 'clamp(5.00rem, calc(4.13rem + 4.35vw), 7.50rem)', // Between: 80px → 120px
 	'1': 'clamp(6.00rem, calc(4.96rem + 5.22vw), 9.00rem)', // Step 3xs: 96px → 144px
 	'2': 'clamp(8.00rem, calc(6.61rem + 6.96vw), 12.00rem)', // Step 2xs: 128px → 192px
@@ -47,9 +47,9 @@ export const fluidSizeBase = {
 	'9': 'clamp(40.00rem, calc(33.04rem + 34.78vw), 60.00rem)', // Step 3xl: 640px → 960px
 }
 
-const fluidSize = addKeys(fluidSizeBase)
+const fluidSizeKeys = extractKeys(fluidSize)
 
-const shirtBase = {
+const shirt = {
 	'2xs': fluidSize['0'],
 	xs: fluidSize['1'],
 	sm: fluidSize['2'],
@@ -62,10 +62,11 @@ const shirtBase = {
 	'5xl': fluidSize['9'],
 }
 
-const shirt = addKeys(shirtBase)
+const shirtKeys = extractKeys(shirt)
 
 export const fluidSizeAliases = {
 	shirt,
+	shirtKeys,
 }
 
 const uniqueSizes = {
