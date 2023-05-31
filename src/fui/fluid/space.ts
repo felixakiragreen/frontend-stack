@@ -1,4 +1,4 @@
-import { addKeys, addNegatives } from './utils'
+import { addKeys, extractKeys, addNegatives } from './utils'
 
 // SPACE
 
@@ -39,7 +39,7 @@ import { addKeys, addNegatives } from './utils'
 // 	--space-4xl: clamp(8.00rem, calc(6.61rem + 6.96vw), 12.00rem);
 // }
 
-export const fluidSpaceBase = {
+export const fluidSpace = {
 	'0': '0',
 	'1': 'clamp(0.13rem, calc(0.10rem + 0.11vw), 0.19rem)', // Step 4xs: 2px → 3px
 	'2': 'clamp(0.25rem, calc(0.21rem + 0.22vw), 0.38rem)', // Step 3xs: 4px → 6px
@@ -52,9 +52,9 @@ export const fluidSpaceBase = {
 	'9': 'clamp(4.00rem, calc(3.30rem + 3.48vw), 6.00rem)', // Step 2xl: 64px → 96px
 }
 
-export const fluidSpace = addKeys(fluidSpaceBase)
+const fluidSpaceKeys = extractKeys(fluidSpace)
 
-const shirtBase = {
+const shirt = {
 	no: fluidSpace['0'],
 	xs: fluidSpace['1'],
 	sm: fluidSpace['2'],
@@ -67,10 +67,11 @@ const shirtBase = {
 	'5xl': fluidSpace['9'],
 }
 
-const shirt = addKeys(shirtBase)
+const shirtKeys = extractKeys(shirt)
 
 export const fluidSpaceAliases = {
 	shirt,
+	shirtKeys,
 }
 
 const uniqueSizes = {
@@ -81,7 +82,7 @@ const uniqueSizes = {
 
 export const space = {
 	...fluidSpace,
-	...addNegatives(fluidSpaceBase),
+	...addNegatives(fluidSpace),
 	...uniqueSizes,
 	...fluidSpaceAliases.shirt,
 }
