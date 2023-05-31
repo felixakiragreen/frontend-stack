@@ -11,12 +11,7 @@
 	} from '@/fui'
 </script>
 
-<VStack
-	gap="md"
-	css={{
-		bg: '$orange600',
-	}}
->
+<VStack gap="md" bg="grey900">
 	<Text>Atoms are cool</Text>
 	<VStack gap="md" align="baseline">
 		<Button look="holo">Holo Button</Button>
