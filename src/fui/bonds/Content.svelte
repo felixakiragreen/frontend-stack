@@ -10,7 +10,7 @@
 
 		mx: 'auto',
 		maxWidth: '$screen-lg',
-		p: '$sm',
+		p: '$md',
 	})
 </script>
 
