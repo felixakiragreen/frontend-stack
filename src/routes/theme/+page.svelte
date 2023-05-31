@@ -8,14 +8,10 @@
 
 <Content
 	css={{
-		bg: '$orange700',
+		bg: '$grey700',
 	}}
 >
-	<VStack
-		css={{
-			bg: '$orange600',
-		}}
-	>
+	<VStack bg="grey800" gap="xl">
 		<!-- TODO: make a heading	 -->
 		<Text>Theme</Text>
 
