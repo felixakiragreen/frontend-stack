@@ -12,10 +12,18 @@
 </script>
 
 <VStack
+	gap="md"
 	css={{
 		bg: '$orange600',
 	}}
 >
 	<Text>Atoms are cool</Text>
-	<Button look="holo">Holo Button</Button>
+	<VStack gap="md" align="baseline">
+		<Button look="holo">Holo Button</Button>
+		<Button look="holoPink">Holo Button</Button>
+		<Button look="holoRed">Holo Button</Button>
+		<Button look="purps">Holo Button</Button>
+		<Button look="greens">Holo Button</Button>
+		<Button look="clean">Holo Button</Button>
+	</VStack>
 </VStack>

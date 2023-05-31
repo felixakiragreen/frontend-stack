@@ -17,7 +17,7 @@
 	<Text>Space</Text>
 
 	{#each array as a}
-		<HStack gap="sm">
+		<HStack p="sm" gap="sm">
 			<Box
 				css={{
 					bg: '$green600',
