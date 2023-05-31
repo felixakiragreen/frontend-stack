@@ -1,5 +1,5 @@
 export { default as Anchor } from './Anchor.svelte'
-export { default as Box } from './Box.svelte'
+export { default as BoxAtom } from './Box.svelte'
 export { default as ButtonAtom } from './Button.svelte'
 export { default as Heading } from './Heading.svelte'
 export { default as Image } from './Image.svelte'
