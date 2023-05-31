@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { stitch } from '@/fui'
+	import { stitch, ButtonAtom } from '@/fui'
 	import type { PropCss, PropBoolean, VariantOption } from '@/types'
-	import { ButtonAtom } from '@/fui/atoms'
 
 	export let css: PropCss = undefined
 
@@ -9,6 +8,18 @@
 	export let size: VariantOption<typeof ss, 'size'> | undefined = 'md'
 	export let rounding: VariantOption<typeof ss, 'rounding'> | undefined = 'md'
 	export let disabled: PropBoolean = undefined
+
+	// TODO: button looks
+	// [ ] basic (solid color)
+	// [ ] holo
+	// [ ] clean (no styling)
+	// [ ] magic
+	// [ ] brutal
+	// chamfer ? (cut corners, maybe just top left & bottom right?)
+	// hexagonal ?
+
+	// color = highlight / hue
+	//
 
 	const ss = stitch({
 		// bg: '$gold',
