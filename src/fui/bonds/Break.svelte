@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { stitch } from '@/fui'
+	import { stitch, Span } from '@/fui'
 	import type { PropCss, PropBoolean, VariantOption } from '@/types'
-	import { Span } from '@/fui/atoms'
 
 	export let css: PropCss = undefined
 	export let all: PropBoolean = undefined
