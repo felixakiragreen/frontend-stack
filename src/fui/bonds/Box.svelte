@@ -2,7 +2,10 @@
 	import { stitch, Box } from '@/fui'
 	import type { PropCss, PropString, VariantOption } from '@/types'
 
-	import { generateSpaceVariants } from '@/fui/style/variants'
+	import {
+		generateSpaceVariants,
+		generateColorVariants,
+	} from '@/fui/style/variants'
 
 	export let id: PropString = undefined
 	export let css: PropCss = undefined
@@ -45,6 +48,8 @@
 			mb: generateSpaceVariants('mb'),
 			ml: generateSpaceVariants('ml'),
 			//
+			bg: generateColorVariants('bg'),
+			fg: generateColorVariants('color'),
 		},
 	})
 </script>
