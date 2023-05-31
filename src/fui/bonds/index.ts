@@ -1,3 +1,4 @@
+export { default as Box } from './Box.svelte'
 export { default as Break } from './Break.svelte'
 export { default as Button } from './Button.svelte'
 export { default as Content } from './Content.svelte'
