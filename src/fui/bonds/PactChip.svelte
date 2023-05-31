@@ -8,6 +8,8 @@
 	export let css: PropCss = undefined
 	export let look: VariantOption<typeof ss, 'look'> | undefined = 'base'
 
+	// TODO: rename / rework to CHIP
+
 	const ss = stitch({
 		position: 'relative',
 		px: '$2',
