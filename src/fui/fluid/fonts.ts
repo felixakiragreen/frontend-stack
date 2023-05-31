@@ -1,4 +1,4 @@
-import { addKeys } from './utils'
+import { addKeys, extractKeys } from './utils'
 
 /* @link https://utopia.fyi/type/calculator?c=320,16,1.25,1240,20,1.333,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
@@ -31,7 +31,7 @@ import { addKeys } from './utils'
 // 	--step-6: clamp(3.82rem, calc(2.70rem + 5.56vw), 7.01rem);
 //  }
 
-const fluidFontBase = {
+export const fluidFont = {
 	'1': 'clamp(0.64rem, calc(0.62rem + 0.11vw), 0.70rem)', // Step -2: 10.24px → 11.26px
 	'2': 'clamp(0.80rem, calc(0.75rem + 0.24vw), 0.94rem)', // Step -1: 12.80px → 15.00px
 	'3': 'clamp(1.00rem, calc(0.91rem + 0.43vw), 1.25rem)', // Step 0: 16.00px → 20.00px
@@ -43,9 +43,9 @@ const fluidFontBase = {
 	'9': 'clamp(3.82rem, calc(2.70rem + 5.56vw), 7.01rem)', // Step 6: 61.04px → 112.20px
 }
 
-export const fluidFont = addKeys(fluidFontBase)
+const fluidFontKeys = extractKeys(fluidFont)
 
-const shirtBase = {
+const shirt = {
 	xs: fluidFont['1'],
 	sm: fluidFont['2'],
 	md: fluidFont['3'],
@@ -57,9 +57,9 @@ const shirtBase = {
 	'5xl': fluidFont['9'],
 }
 
-const shirt = addKeys(shirtBase)
+const shirtKeys = extractKeys(shirt)
 
-const typoBase = {
+const typo = {
 	c2: fluidFont['1'],
 	c1: fluidFont['2'],
 	b: fluidFont['3'],
@@ -71,9 +71,9 @@ const typoBase = {
 	h1: fluidFont['9'],
 }
 
-const typo = addKeys(typoBase)
+const typoKeys = extractKeys(typo)
 
-const stepBase = {
+const step = {
 	'step_-2': fluidFont['1'],
 	'step_-1': fluidFont['2'],
 	step_0: fluidFont['3'],
@@ -85,12 +85,15 @@ const stepBase = {
 	step_6: fluidFont['9'],
 }
 
-const step = addKeys(stepBase)
+const stepKeys = extractKeys(step)
 
 export const fluidFontAliases = {
 	shirt, // t-shirt sizes
+	shirtKeys,
 	typo, // typographical sizes
+	typoKeys,
 	step, // fluid steps
+	stepKeys,
 }
 
 export const fontSizes = {
