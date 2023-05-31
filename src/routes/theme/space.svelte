@@ -26,7 +26,7 @@
 			/>
 			<Text>
 				{a} -
-				{fluidSpaceAliases.shirt.keys[a]}
+				{fluidSpaceAliases.shirtKeys[a]}
 			</Text>
 		</HStack>
 	{/each}
@@ -42,7 +42,7 @@
 		>
 			<Text>
 				{a} -
-				{fluidSizeAliases.shirt.keys[a]}
+				{fluidSizeAliases.shirtKeys[a]}
 			</Text>
 		</Box>
 	{/each}
