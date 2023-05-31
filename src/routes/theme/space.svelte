@@ -8,35 +8,33 @@
 	const array = Array.from({ length }, (_, i) => i)
 </script>
 
-<VStack
-	gap="sm"
-	css={{
-		bg: '$orange600',
-	}}
->
+<VStack gap="sm" bg="grey900">
 	<Text>Space</Text>
 
-	{#each array as a}
-		<HStack p="sm" gap="sm">
-			<Box
-				css={{
-					bg: '$green600',
-					size: `$space$${a}`,
-				}}
-			/>
-			<Text>
-				{a} -
-				{fluidSpaceAliases.shirtKeys[a]}
-			</Text>
-		</HStack>
-	{/each}
+	<HStack p="sm" gap="sm">
+		{#each array as a}
+			<VStack p="sm" gap="sm">
+				<Box
+					bg="green400"
+					css={{
+						size: `$space$${a}`,
+					}}
+				/>
+				<Text>
+					{a} -
+					{fluidSpaceAliases.shirtKeys[a]}
+				</Text>
+			</VStack>
+		{/each}
+	</HStack>
 
 	<Text>Sizes</Text>
 
 	{#each array as a}
 		<Box
+			p="lg"
+			bg="green600"
 			css={{
-				bg: '$green600',
 				size: `$${a}`,
 			}}
 		>
