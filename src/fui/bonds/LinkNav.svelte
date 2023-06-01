@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores'
 
-	import { Link, Text } from '@/fui/bonds'
+	import { Link, Text } from '@/fui'
 
 	export let route: string
 	export let label: string
@@ -14,7 +14,7 @@
 		css={{
 			//
 			color: isActive ? '$primary' : undefined,
-			fontWeight: isActive ? '$thic' : null,
+			fontWeight: isActive ? '$thic' : undefined,
 		}}
 	>
 		{label}
