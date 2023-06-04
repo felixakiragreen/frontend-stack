@@ -1,79 +1,116 @@
-export default {
+export const grey = {
+	'100': '#f5f5ef',
+	'200': '#ebebe2',
+	'300': '#d3d4c9',
+	'400': '#aaaba0',
+	'500': '#7f8076',
+	'600': '#53544c',
+	'650': '#373832',
+	'700': '#2a2b26',
+	'750': '#1d1e1a',
+	'800': '#141411',
+	'900': '#0a0a09',
+}
+
+export const red = {
+	'100': '#ffecfa',
+	'200': '#ffa3d6',
+	'300': '#fc64a1',
+	'400': '#ed3467',
+	'500': '#cb1d37',
+	'600': '#a11420',
+	'700': '#710e15',
+	'800': '#470a0d',
+	'900': '#290607',
+}
+
+export const orange = {
+	'100': '#fff6e9',
+	'200': '#fed7a8',
+	'300': '#fcb760',
+	'400': '#f1901d',
+	'500': '#cb6709',
+	'600': '#9e490c',
+	'700': '#75330f',
+	'800': '#50240f',
+	'900': '#2f150d',
+}
+
+export const yellow = {
+	'100': '#f2f2de',
+	'200': '#f3f1b0',
+	'300': '#f5ea7e',
+	'400': '#f7dd4b',
+	'500': '#f8cb1b',
+	'600': '#c6930b',
+	'700': '#8f5c07',
+	'800': '#5f3906',
+	'900': '#371f05',
+}
+
+export const green = {
+	'100': '#e8ead8',
+	'200': '#e4efab',
+	'300': '#cfed6d',
+	'400': '#a5e22c',
+	'500': '#6fbf10',
+	'600': '#3f9608',
+	'700': '#1e6e08',
+	'800': '#0c4a07',
+	'900': '#052907',
+}
+
+export const blue = {
+	'100': '#e5f6f8',
+	'200': '#a9eaf4',
+	'300': '#70dbef',
+	'400': '#38bce6',
+	'500': '#0f8fd0',
+	'600': '#0362b2',
+	'700': '#013f8c',
+	'800': '#002662',
+	'900': '#001336',
+}
+
+export const purple = {
+	'100': '#f0e6f9',
+	'200': '#ccbdf9',
+	'300': '#b29af8',
+	'400': '#9f7af2',
+	'500': '#8659e1',
+	'600': '#643bc0',
+	'700': '#442294',
+	'800': '#271163',
+	'900': '#120639',
+}
+
+const felixkaiRgb = {
 	felix: '#adff2f',
 	black: '#000000',
 	white: '#ffffff',
 	clear: '#00000000',
-	semi: '#00000080',
-	//
-	grey100: '#f5f5ef',
-	grey200: '#ebebe2',
-	grey300: '#d3d4c9',
-	grey400: '#aaaba0',
-	grey500: '#7f8076',
-	grey600: '#53544c',
-	grey650: '#373832',
-	grey700: '#2a2b26',
-	grey750: '#1d1e1a',
-	grey800: '#141411',
-	grey900: '#0a0a09',
-	//
-	red100: '#ffecfa',
-	red200: '#ffa3d6',
-	red300: '#fc64a1',
-	red400: '#ed3467',
-	red500: '#cb1d37',
-	red600: '#a11420',
-	red700: '#710e15',
-	red800: '#470a0d',
-	red900: '#290607',
-	//
-	orange100: '#fff6e9',
-	orange200: '#fed7a8',
-	orange300: '#fcb760',
-	orange400: '#f1901d',
-	orange500: '#cb6709',
-	orange600: '#9e490c',
-	orange700: '#75330f',
-	orange800: '#50240f',
-	orange900: '#2f150d',
-	//
-	yellow100: '#f2f2de',
-	yellow200: '#f3f1b0',
-	yellow300: '#f5ea7e',
-	yellow400: '#f7dd4b',
-	yellow500: '#f8cb1b',
-	yellow600: '#c6930b',
-	yellow700: '#8f5c07',
-	yellow800: '#5f3906',
-	yellow900: '#371f05',
-	//
-	green100: '#e8ead8',
-	green200: '#e4efab',
-	green300: '#cfed6d',
-	green400: '#a5e22c',
-	green500: '#6fbf10',
-	green600: '#3f9608',
-	green700: '#1e6e08',
-	green800: '#0c4a07',
-	green900: '#052907',
-	//
-	blue100: '#e5f6f8',
-	blue200: '#a9eaf4',
-	blue300: '#70dbef',
-	blue400: '#38bce6',
-	blue500: '#0f8fd0',
-	blue600: '#0362b2',
-	blue700: '#013f8c',
-	blue800: '#002662',
-	blue900: '#001336',
-	//
-	purple100: '#f0e6f9',
-	purple200: '#ccbdf9',
-	purple300: '#b29af8',
-	purple400: '#9f7af2',
-	purple500: '#8659e1',
-	purple600: '#643bc0',
-	purple700: '#442294',
-	purple800: '#271163',
-	purple900: '#120639',
+	// hues
+	...mapColor({ grey }),
+	...mapColor({ red }),
+	...mapColor({ orange }),
+	...mapColor({ yellow }),
+	...mapColor({ green }),
+	...mapColor({ blue }),
+	...mapColor({ purple }),
+}
+
+export default felixkaiRgb
+
+function mapColor<T extends Record<string, Record<string, string>>>(
+	input: T,
+): {
+	[K in keyof T]: { [J in keyof T[K] as `${K & string}${J & string}`]: T[K][J] }
+}[keyof T] {
+	const output: any = {}
+	Object.entries(input).forEach(([colorName, shades]) => {
+		Object.entries(shades).forEach(([shade, hexCode]) => {
+			output[`${colorName}${shade}`] = hexCode
+		})
+	})
+	return output
 }
