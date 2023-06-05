@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { Box, Span, Content, VStack, HStack, Text, Break } from '@/fui'
 
-	import felixkai from '@/fui/color/felixkaiOklch'
+	// import felixkai from '@/fui/color/temp_felixkaiOklch'
+
+	import { felixkaiOklch as felixkai } from '@/fui/color'
 
 	// array from 1 to 9
 	// const length = 9
