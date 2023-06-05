@@ -6,11 +6,7 @@
 	import Fonts from './fonts.svelte'
 </script>
 
-<Content
-	css={{
-		bg: '$grey700',
-	}}
->
+<Content bg="backgroundest">
 	<VStack bg="grey800" gap="xl">
 		<!-- TODO: make a heading	 -->
 		<Text>Theme</Text>
