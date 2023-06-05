@@ -2,8 +2,8 @@
 	import { Box, Content, VStack, HStack, Text, Break, LinkNav } from '@/fui'
 </script>
 
-<Content>
-	<HStack bg="grey800" gap="xl">
+<Content bg="backgrounder">
+	<HStack bg="backgroundest" gap="xl">
 		<LinkNav route="/theme" label="Theme" />
 		<LinkNav route="/theme/atoms" label="Atoms" />
 		<LinkNav route="/theme/space" label="Space" />
