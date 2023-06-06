@@ -1,6 +1,11 @@
 <script lang="ts">
 	import { stitch, BoxAtom } from '@/fui'
-	import type { PropCss, PropString, VariantOption } from '@/fui'
+	import type {
+		PropCss,
+		PropString,
+		VariantOption,
+		VariantOptionBool,
+	} from '@/fui'
 	import { generateSpaceVariants } from '@/fui/style/variants'
 	import { stitching } from './Box.svelte'
 
@@ -33,6 +38,7 @@
 	export let alignV: VariantOption<typeof ss, 'alignV'> | undefined = undefined
 	export let collapse: VariantOption<typeof ss, 'collapse'> | undefined =
 		undefined
+	export let wrap: VariantOptionBool<typeof ss, 'wrap'> | undefined = undefined
 
 	const ss = stitch(stitching, {
 		display: 'flex',
@@ -88,6 +94,11 @@
 					},
 				},
 			},
+			wrap: {
+				true: {
+					flexWrap: 'wrap',
+				},
+			},
 		},
 	})
 </script>
@@ -120,6 +131,7 @@
 		align,
 		alignV,
 		collapse,
+		wrap,
 	}}
 	{css}
 >
