@@ -45,9 +45,20 @@
 				<Button look="holo">HOLO</Button>
 				<Button look="holo" disabled>HOLO</Button>
 			</VStack>
-			<Button look="purps">Holo Button</Button>
-			<Button look="greens">Holo Button</Button>
-			<Button look="clean">Holo Button</Button>
+			<VStack gap="md">
+				<Button look="clean">CLEAN</Button>
+				<Button look="clean" disabled>CLEAN</Button>
+			</VStack>
+			<VStack gap="md" p="md">
+				<Button look="brutal">BRUTAL</Button>
+				<Button look="brutal" disabled>BRUTAL</Button>
+			</VStack>
+			<VStack gap="md" p="md">
+				<Button look="brutalist">BRUTALIST</Button>
+				<Button look="brutalist" disabled>BRUTALIST</Button>
+			</VStack>
+			<!-- <Button look="purps">Holo Button</Button>
+			<Button look="greens">Holo Button</Button> -->
 		</HStack>
 	</VStack>
 </VStack>
