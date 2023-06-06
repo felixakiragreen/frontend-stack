@@ -132,6 +132,68 @@
 						boxShadow: '4px 4px 0px 0 $colors$highground',
 					},
 				},
+				magic: {
+					$$Corner: '$radii$md',
+					position: 'relative',
+					borderRadius: '$$Corner',
+					bg: '$colors$clear',
+					p: '$no',
+					outlineOffset: '4px',
+					border: 0,
+
+					// linearGradient: 'to bottom, $colors$clear, $colors$green-500',
+					'.front': {
+						display: 'block',
+						bg: '$primaryHighground',
+						borderRadius: '$$Corner',
+						transform: 'translateY(-4px)',
+						willChange: 'transform',
+						transition: 'transform 600ms cubic-bezier(.3, .7, .4, 1)',
+					},
+
+					'&:hover': {
+						bg: '$primaryHighgroundest',
+
+						'.front': {
+							transition: 'transform 250ms cubic-bezier(.3, .7, .4, 1.5)',
+							transform: 'translateY(-6px)',
+						},
+					},
+
+					'&:active': {
+						'.front': {
+							transform: 'translateY(-2px)',
+						},
+					},
+
+					'.shadow': {
+						position: 'absolute',
+						top: '0',
+						left: '0',
+						width: '100%',
+						height: '100%',
+						borderRadius: '$$Corner',
+						background: 'hsl(0deg 0% 0% / 0.25)',
+						transform: 'translateY(2px)',
+						filter: 'blur(2px)',
+					},
+
+					'.edge': {
+						position: 'absolute',
+						top: '0',
+						left: '0',
+						width: '100%',
+						height: '100%',
+						borderRadius: '$$Corner',
+						background: `linear-gradient(
+							to left,
+							$primaryBackgroundish 0%,
+							$primaryBackground 8%,
+							$primaryBackground 92%,
+							$primaryBackgroundish 100%
+						)`,
+					},
+				},
 			},
 			size: {
 				no: {
@@ -188,9 +250,45 @@
 				},
 			},
 		},
+		compoundVariants: [
+			// magic + xs
+			{
+				look: 'magic',
+				size: 'xs',
+				css: {
+					'.front': {
+						p: '$xs',
+					},
+				},
+			},
+			// magic + sm
+			{
+				look: 'magic',
+				size: 'sm',
+				css: {
+					'.front': {
+						p: '$sm',
+					},
+				},
+			},
+			// magic + md
+			{
+				look: 'magic',
+				size: 'md',
+				css: {
+					'.front': {
+						p: '$md',
+					},
+				},
+			},
+		],
 	})
 </script>
 
 <ButtonAtom cls={ss} vrt={{ look, size, rounding }} {css} {disabled} on:click>
-	<slot />
+	<span class="shadow" />
+	<span class="edge" />
+	<span class="front">
+		<slot />
+	</span>
 </ButtonAtom>
