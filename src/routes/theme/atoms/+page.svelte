@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Atoms from '../aatoms.svelte'
+	import Atoms from '../atoms.svelte'
 </script>
 
 <Atoms />

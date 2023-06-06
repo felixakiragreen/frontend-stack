@@ -35,10 +35,19 @@
 			<Button look="holo" size="xl" rounding="3xl">3XL</Button>
 			<Button look="holo" size="xl" rounding="full">FULL</Button>
 		</HStack>
-		<!-- <Button look="holoPink">Holo Button</Button>
-		<Button look="holoRed">Holo Button</Button>
-		<Button look="purps">Holo Button</Button>
-		<Button look="greens">Holo Button</Button>
-		<Button look="clean">Holo Button</Button> -->
+		<Text>Look</Text>
+		<HStack gap="md" gapV="md" alignV="bottom" wrap>
+			<VStack gap="md">
+				<Button look="basic">BASIC</Button>
+				<Button look="basic" disabled>BASIC</Button>
+			</VStack>
+			<VStack gap="md">
+				<Button look="holo">HOLO</Button>
+				<Button look="holo" disabled>HOLO</Button>
+			</VStack>
+			<Button look="purps">Holo Button</Button>
+			<Button look="greens">Holo Button</Button>
+			<Button look="clean">Holo Button</Button>
+		</HStack>
 	</VStack>
 </VStack>
