@@ -150,6 +150,10 @@
 					p: '$lg',
 					text: '$lg',
 				},
+				xl: {
+					p: '$xl',
+					text: '$xl',
+				},
 			},
 			rounding: {
 				no: {
