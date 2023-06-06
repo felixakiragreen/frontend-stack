@@ -32,63 +32,51 @@
 		cursor: 'pointer',
 		transition: '$1',
 
-		'&:active': {
-			boxShadow: 'inset 0 1px 0px 1px rgba(0, 0, 0, 0.5)',
-			transform: 'translateY(4px)',
-			borderColor: '$indigo',
-		},
+		// TODO: REWORK THIS PART
+		// '&:active': {
+		// 	boxShadow: 'inset 0 1px 0px 1px rgba(0, 0, 0, 0.5)',
+		// 	transform: 'translateY(4px)',
+		// 	borderColor: '$indigo',
+		// },
 		'&:disabled': {
 			cursor: 'not-allowed',
-			bg: '$grey700',
+			bg: '$background',
+			color: '$highground',
 		},
 		'&:disabled:hover': {
-			bg: '$foreground',
-			color: '$grey700',
+			bg: '$backgrounder',
+			color: '$highgroundish',
 		},
 
 		variants: {
 			look: {
+				basic: {
+					bg: '$primaryHighground',
+					color: '$primaryBackgroundest',
+					border: 0,
+					'&:hover': {
+						bg: '$primaryForegroundest',
+					},
+				},
 				holo: {
-					bg: '$background',
-					color: '$felix',
-					border: '1px solid $felix',
+					bg: '$backgroundest',
+					color: '$primaryHighground',
+					border: '1px solid $primaryHighground',
 					fontFamily: '$mono',
 					// textTransform: 'uppercase',
 					'&:hover': {
-						bg: '$felix',
-						color: '$indigo',
+						bg: '$primaryHighground',
+						color: '$primaryBackgroundest',
 					},
 					'&:disabled': {
-						bg: '$grey700',
-						color: '$grey500',
-						border: '1px solid $grey500',
+						// bg: '$background',
+						// color: '$highground',
+						border: '1px solid $highground',
 					},
 					'&:disabled:hover': {
-						bg: '$grey800',
-						color: '$grey500',
-						border: '1px solid $grey500',
-					},
-				},
-				holoPink: {
-					bg: '$background',
-					color: '$worm',
-					border: '1px solid $worm',
-					fontFamily: '$mono',
-					// textTransform: 'uppercase',
-					'&:hover': {
-						bg: '$worm',
-						color: '$black',
-					},
-				},
-				holoRed: {
-					bg: '$background',
-					color: '$wriggler',
-					border: '1px solid $wriggler',
-					fontFamily: '$mono',
-					// textTransform: 'uppercase',
-					'&:hover': {
-						bg: '$wriggler',
-						color: '$black',
+						// bg: '$backgrounder',
+						// color: '$highgroundish',
+						border: '1px solid $highgroundish',
 					},
 				},
 				purps: {
@@ -126,6 +114,7 @@
 				},
 				clean: {
 					bg: '$clear',
+					color: '$foreground',
 					border: 0,
 					'&:active': {},
 				},
