@@ -132,22 +132,23 @@
 			},
 			size: {
 				no: {
-					p: '$0',
+					p: '$no',
+				},
+				xs: {
+					p: '$xs',
+					text: '$xs',
 				},
 				sm: {
-					px: '$3',
-					py: '$1_5',
-					text: '$md',
+					p: '$sm',
+					text: '$sm',
 				},
 				md: {
-					px: '$4',
-					py: '$2',
-					text: '$lg',
+					p: '$md',
+					text: '$md',
 				},
 				lg: {
-					px: '$6',
-					py: '$3',
-					text: '$xl',
+					p: '$lg',
+					text: '$lg',
 				},
 			},
 			rounding: {
