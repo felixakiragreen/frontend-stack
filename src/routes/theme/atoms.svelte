@@ -57,6 +57,10 @@
 				<Button look="brutalist">BRUTALIST</Button>
 				<Button look="brutalist" disabled>BRUTALIST</Button>
 			</VStack>
+			<VStack gap="md" p="md">
+				<Button look="magic">MAGIC</Button>
+				<Button look="magic" disabled>MAGIC</Button>
+			</VStack>
 			<!-- <Button look="purps">Holo Button</Button>
 			<Button look="greens">Holo Button</Button> -->
 		</HStack>
