@@ -10,11 +10,11 @@
 	export let disabled: PropBoolean = undefined
 
 	// TODO: button looks
-	// [ ] basic (solid color)
-	// [ ] holo
-	// [ ] clean (no styling)
+	// [x] basic (solid color)
+	// [x] holo
+	// [x] clean (no styling)
 	// [ ] magic
-	// [ ] brutal
+	// [x] brutal
 	// chamfer ? (cut corners, maybe just top left & bottom right?)
 	// hexagonal ?
 
@@ -79,44 +79,58 @@
 						border: '1px solid $highgroundish',
 					},
 				},
-				purps: {
-					bg: '$indigo',
-					color: '$felix',
-					border: 'none',
-					fontFamily: '$mono',
-					textTransform: 'uppercase',
-					'&:hover': {
-						bg: '$felix',
-						color: '$indigo',
-					},
-				},
-				greens: {
-					bg: '$felix',
-					color: '$indigo',
-					border: 'none',
-					fontFamily: '$mono',
-					textTransform: 'uppercase',
-					'&:hover': {
-						bg: '$indigo',
-						color: '$felix',
-					},
-				},
-				pinks: {
-					bg: '$worm',
-					color: '$foreground',
-					border: 'none',
-					fontFamily: '$mono',
-					textTransform: 'uppercase',
-					'&:hover': {
-						bg: '$foreground',
-						color: '$worm',
-					},
-				},
 				clean: {
 					bg: '$clear',
 					color: '$foreground',
 					border: 0,
 					'&:active': {},
+				},
+				brutal: {
+					bg: '$primaryHighground',
+					color: '$primaryBackgroundest',
+					border: 0,
+					br: '$no',
+					boxShadow: '$hard',
+					'&:hover': {
+						bg: '$primaryForegroundest',
+					},
+					'&:active': {
+						bg: '$primaryHighground',
+						boxShadow:
+							'1px 1px 0px 0 rgba(0, 0, 0), inset 2px 2px 0px 2px rgba(0, 0, 0, 0.5)',
+						transform: 'translate(4px, 4px)',
+					},
+					'&:disabled:active': {
+						transform: 'translate(0)',
+						boxShadow: '$hard',
+					},
+				},
+				brutalist: {
+					bg: '$backgroundest',
+					color: '$primaryHighground',
+					border: '1px solid $primaryHighground',
+					br: '$no',
+					boxShadow: '4px 4px 0px 0 $colors$primaryHighground',
+					'&:hover': {
+						bg: '$backgroundish',
+					},
+					'&:active': {
+						boxShadow:
+							'0px 0px 0px 0 rgba(0, 0, 0), inset 0px 0px 0px 2px rgba(0, 0, 0, 0.5)',
+						transform: 'translate(4px, 4px)',
+					},
+					'&:disabled': {
+						border: '1px solid $highground',
+						boxShadow: '4px 4px 0px 0 $colors$highground',
+					},
+					'&:disabled:hover': {
+						border: '1px solid $highgroundish',
+						boxShadow: '4px 4px 0px 0 $colors$highgroundish',
+					},
+					'&:disabled:active': {
+						transform: 'translate(0)',
+						boxShadow: '4px 4px 0px 0 $colors$highground',
+					},
 				},
 			},
 			size: {
