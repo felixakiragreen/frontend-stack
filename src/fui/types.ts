@@ -41,6 +41,15 @@ export type VariantOption<
 	? Extract<Stitches.VariantProps<Component>[VariantName], string>
 	: Extract<Stitches.VariantProps<Component>, string>
 
+export type VariantOptionBool<
+	Component extends { [key: symbol | string]: any },
+	VariantName extends
+		| keyof Stitches.VariantProps<Component>
+		| unknown = unknown,
+> = VariantName extends keyof Stitches.VariantProps<Component>
+	? Extract<Stitches.VariantProps<Component>[VariantName], boolean>
+	: Extract<Stitches.VariantProps<Component>, boolean>
+
 export type SocialLink = {
 	url: string
 	username: string
