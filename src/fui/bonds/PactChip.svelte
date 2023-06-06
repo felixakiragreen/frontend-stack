@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { stitch } from '@/fui'
+	import { stitch, BoxAtom } from '@/fui'
 	import type { PropCss, VariantOption } from '@/types'
-	import { Box } from '@/fui/atoms'
 
 	import Text from './Text.svelte'
 
@@ -57,8 +56,8 @@
 	})
 </script>
 
-<Box cls={ss} vrt={{ look }} {css}>
+<BoxAtom cls={ss} vrt={{ look }} {css}>
 	<Text size="xs">
 		<slot />
 	</Text>
-</Box>
+</BoxAtom>

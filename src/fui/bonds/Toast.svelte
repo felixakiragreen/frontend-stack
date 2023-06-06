@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { stitch } from '@/fui'
+	import { stitch, BoxAtom } from '@/fui'
 	import type { PropCss, PropString, VariantOption, Color } from '@/types'
-	import { Box } from '@/fui/atoms'
+	// import { Box } from '@/fui/atoms'
 
 	import Text from './Text.svelte'
 	import HStack from './HStack.svelte'
@@ -73,7 +73,7 @@
 		borderRadius: '$base',
 	}}
 >
-	<Box
+	<BoxAtom
 		css={{
 			width: '$2',
 			bg: 'var(--cur)',
