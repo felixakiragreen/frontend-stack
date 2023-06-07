@@ -14,11 +14,7 @@
 	const arrayR = arrayI.map((i) => r(i))
 </script>
 
-<Content
-	css={{
-		bg: '$orange700',
-	}}
->
+<Content bg="orange700">
 	<VStack
 		css={{
 			bg: '$orange900',
