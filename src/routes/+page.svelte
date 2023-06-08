@@ -15,11 +15,7 @@
 </script>
 
 <Content bg="orange700">
-	<VStack
-		css={{
-			bg: '$orange900',
-		}}
-	>
+	<VStack bg="orange900">
 		<Text>Body</Text>
 		{#each arrayI as a, index}
 			<HStack gap="md">
