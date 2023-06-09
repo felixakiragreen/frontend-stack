@@ -22,9 +22,9 @@
 				<Text color="muted">{index}</Text>
 				<Text>{a}</Text>
 				<Box
+					bg="blue400"
 					css={{
 						width: `${arrayR[index]}px`,
-						bg: '$blue400',
 					}}
 				/>
 				<Text>{arrayR[index]}</Text>
