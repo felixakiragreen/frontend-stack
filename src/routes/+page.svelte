@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Box, Content, VStack, HStack, Text, Break } from '@/fui'
+	import { Box, Content, VStack, HStack, Text, Link } from '@/fui'
 
 	function r(n: number) {
 		// return square root of 6 divided by 2 to the power of n
@@ -17,6 +17,7 @@
 <Content bg="orange700">
 	<VStack bg="orange900">
 		<Text>Body</Text>
+		<Link url="/theme">Theme</Link>
 		{#each arrayI as a, index}
 			<HStack gap="md">
 				<Text color="muted">{index}</Text>
