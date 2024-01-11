@@ -1,4 +1,4 @@
-import { vitePreprocess } from '@sveltejs/kit/vite'
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 import netlify from '@sveltejs/adapter-netlify'
 
 import { mdsvex } from 'mdsvex'
