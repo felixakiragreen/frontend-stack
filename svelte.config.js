@@ -15,7 +15,7 @@ const config = {
 	kit: {
 		adapter: netlify(),
 		alias: {
-			'@': '/src',
+			at: '/src',
 		},
 	},
 }
