@@ -1,4 +1,7 @@
-FrontEndStackTodo:
+NEW:
+   [ ] convert from stitches to pandacss
+
+FrontEndStack TODO:
    [ ] responsive images
       vite-imagetools?
    [ ] update to OKLCH
