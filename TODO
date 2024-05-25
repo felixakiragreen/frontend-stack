@@ -5,12 +5,8 @@ NEW:
 FrontEndStack TODO:
    [ ] responsive images
       vite-imagetools?
-   [ ] update to OKLCH
+   [x] update to OKLCH
       oklch.com
-   [x] rename Stack & Inline to HStack & VStack
-   [x] fix TypeScript types
-      export let align: string | null = null
-	   export let alignV: string | null = null
       
    [x] pull over new & improved components from the-worm
    [ ] pull over Magic Button
