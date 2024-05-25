@@ -1,5 +1,6 @@
 NEW:
    [ ] convert from stitches to pandacss
+   [ ] move being component based to using cva components
 
 FrontEndStack TODO:
    [ ] responsive images
