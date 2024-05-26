@@ -14,12 +14,3 @@ FrontEndStack TODO:
    [x] add utopia.fyi responsive systems
    [ ] rework scale system to be based on 
       https://unsigned.io/log/2023_03_17_Abstractions_Set_In_Granite.html
-
-   [x] add all the common CSS values as props p, etc
-
-   [x] move all to /fui
-
-   [ ] fix sveltekit + stitches FOUC
-
-   [ ] ensure I have colors set for all these
-      https://www.w3.org/TR/css-color-4/#ex-SystemCombo
