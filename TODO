@@ -8,5 +8,6 @@ FrontEndStack TODO:
   
    [ ] pull over Magic Button
 
+   // let's not use fluid from utopia?
    [ ] rework scale system to be based on 
       https://unsigned.io/log/2023_03_17_Abstractions_Set_In_Granite.html
