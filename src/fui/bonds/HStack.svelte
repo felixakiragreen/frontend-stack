@@ -6,7 +6,7 @@
 		VariantOption,
 		VariantOptionBool,
 	} from '@/fui'
-	import { generateSpaceVariants } from '@/fui/style/variants'
+	import { generateSpaceVariants } from '@/style/variants'
 	import { stitching } from './Box.svelte'
 
 	export let id: PropString = undefined
