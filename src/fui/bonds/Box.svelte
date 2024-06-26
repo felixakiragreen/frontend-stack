@@ -30,7 +30,7 @@
 	import {
 		generateSpaceVariants,
 		generateColorVariants,
-	} from '@/fui/style/variants'
+	} from '@/style/variants'
 
 	export let id: PropString = undefined
 	export let css: PropCss = undefined
