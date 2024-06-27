@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { stitch, BoxAtom } from '@/fui'
 	import type { PropCss, PropString, VariantOption } from '@/fui'
-	import { generateSpaceVariants } from '@/fui/style/variants'
+	import { generateSpaceVariants } from '@/style/variants'
 	import { stitching } from './Box.svelte'
 
 	export let id: PropString = undefined
